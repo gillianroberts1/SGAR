@@ -21,8 +21,6 @@ const MainContainer = () => {
     setSelectedRecipe(recipe);
   };
 
-  console.log(selectedRecipe);
-  
   return (
     <>
       <h1>MainContainer</h1>

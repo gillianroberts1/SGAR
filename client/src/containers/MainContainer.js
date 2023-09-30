@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { getRecipes } from "../RecipeService";
 import RecipesGrid from "../components/RecipesGrid";
 import RecipesCard from "../components/RecipesCard";
+import NavBar from "../components/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const MainContainer = () => {
   const [recipes, setRecipes] = useState([]);
@@ -23,7 +25,8 @@ const MainContainer = () => {
 
   return (
     <>
-      <h1>MainContainer</h1>
+        
+
       <div className="recipe-container">
         {selectedRecipe.meal ? (
           <RecipesCard recipe={selectedRecipe} />

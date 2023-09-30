@@ -1,5 +1,4 @@
 import "./App.css";
-// import MainContainer from "./containers/MainContainer";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -14,7 +13,6 @@ import RecipesCard from "./components/RecipesCard";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  // const [selectedRecipe, setSelectedRecipe] = useState([]);
 
   useEffect(() => {
     getRecipes().then((allRecipes) => {
@@ -22,9 +20,7 @@ function App() {
     });
   }, []);
 
-  // const handleRecipeClick = (recipe) => {
-  //   setSelectedRecipe(selectedRecipe);
-  // };
+  
 
   return (
     <Router>

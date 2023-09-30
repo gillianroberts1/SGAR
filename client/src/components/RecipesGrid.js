@@ -1,3 +1,5 @@
+import "./RecipesGrid.css"
+
 const RecipesGrid = ({ recipes, handleButtonClick }) => {
   return (
     <div className="all-recipes-container">

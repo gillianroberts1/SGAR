@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { BrowserRouter as Router } from "react-router-dom";
-import "./NavBar.css"
+import "./NavBar.css";
 
 function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -31,27 +31,53 @@ function NavBar() {
         <Container>
           <Navbar.Brand href="#home">
             <div className="logo-container">
-            <img src="#" alt="Logo" className="default"/>
+              <img src="#" alt="Logo" className="default" />
             </div>
-            </Navbar.Brand>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
-            </Navbar.Toggle>
+          </Navbar.Toggle>
 
-          <Navbar.Collapse id="basic-navbar-nav" >
-          <Nav className="me-auto">
-            <Nav.Link href="home" className={activeLink === "home" ? "active navbar-link" : "navbar-link"}
-            onClick={() => onUpdateActiveLink("home")}>       
-            </Nav.Link>
-            <Nav.Link href="all recipes" className={activeLink === "all recipes" ? "active navbar-link" : "navbar-link"}
-            onClick={() => onUpdateActiveLink("all recipes")}>       
-            </Nav.Link>
-            <Nav.Link href="favourites" className={activeLink === "favourites" ? "active navbar-link" : "navbar-link"}
-            onClick={() => onUpdateActiveLink("favourites")}>       
-            </Nav.Link>
-            <Nav.Link href="shopping bag" className={activeLink === "shopping bag" ? "active navbar-link" : "navbar-link"}
-            onClick={() => onUpdateActiveLink("shopping bag")}>       
-            </Nav.Link>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link
+                href="home"
+                className={
+                  activeLink === "home" ? "active navbar-link" : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("home")}
+              >
+                Home
+              </Nav.Link>
+              <Nav.Link
+                href="all recipes"
+                className={
+                  activeLink === "all recipes"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("all recipes")}
+              >
+                All Recipes
+              </Nav.Link>
+              <Nav.Link
+                href="favourites"
+                className={
+                  activeLink === "favourites"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("favourites")}
+              >Favourites</Nav.Link>
+              <Nav.Link
+                href="shopping bag"
+                className={
+                  activeLink === "shopping bag"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("shopping bag")}
+              >Shopping Bag</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

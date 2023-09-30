@@ -9,7 +9,7 @@ nav.navbar {
   
   nav.navbar.scrolled {
     padding: 0px 0;
-    background-color: blue;
+    background-color: white;
   }
   
   nav.navbar a.navbar-brand {

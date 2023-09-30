@@ -1,9 +1,7 @@
-import RecipesCard from "./RecipesCard";
-
 
 const RecipesGrid = ({recipes, handleButtonClick}) => {
 
-    
+    console.log(recipes);    
     return (
         <div className="all-recipes-container">
         {recipes && recipes.map((recipe)=> (

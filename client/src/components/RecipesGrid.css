@@ -1,5 +1,5 @@
 .all-recipes-container {
-  padding-top: 10px;
+  /* padding-top: 110px; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;

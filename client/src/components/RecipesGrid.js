@@ -1,27 +1,12 @@
-import "./RecipesGrid.css"
+import "./RecipesGrid.css";
+import { Link } from "react-router-dom";
 
-
-const RecipesGrid = ({ recipes, handleButtonClick }) => {
-  const [recipes, setRecipes] = useState([]);
-
-  useEffect(() => {
-    getRecipes().then((allRecipes) => {
-      setRecipes(allRecipes);
-    });
-  }, []);
-
-  const handleRecipeClick = (recipe) => {
-    setSelectedRecipe(recipe);
-
+const RecipesGrid = ({ recipes }) => {
   return (
     <div className="all-recipes-container">
       {recipes &&
         recipes.map((recipe) => (
-          <button
-            className="recipe-card"
-            onClick={() => handleButtonClick(recipe)}
-            key={recipe._id}
-          >
+          <Link to={`/${recipe._id}`} className="recipe-card" key={recipe._id}>
             <img
               className="small-img"
               src={recipe.meal.image}
@@ -31,7 +16,7 @@ const RecipesGrid = ({ recipes, handleButtonClick }) => {
             <p className="recipe-description"> {recipe.meal.description}</p>
             <p className="recipe-cooktime">{recipe.meal.cooking_time} mins</p>
             <p className="recipe-country">{recipe.meal.country_of_origin}</p>
-          </button>
+          </Link>
         ))}
     </div>
   );

@@ -1,12 +1,24 @@
 import "./RecipesGrid.css"
 
+
 const RecipesGrid = ({ recipes, handleButtonClick }) => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    getRecipes().then((allRecipes) => {
+      setRecipes(allRecipes);
+    });
+  }, []);
+
+  const handleRecipeClick = (recipe) => {
+    setSelectedRecipe(recipe);
+
   return (
     <div className="all-recipes-container">
       {recipes &&
         recipes.map((recipe) => (
           <button
-            className="recipe"
+            className="recipe-card"
             onClick={() => handleButtonClick(recipe)}
             key={recipe._id}
           >

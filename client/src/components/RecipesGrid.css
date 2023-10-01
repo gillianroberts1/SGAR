@@ -10,3 +10,9 @@
 p.recipe-name {
   text-transform: uppercase;
 }
+
+.recipe-card {
+  text-decoration: none;
+  color: black;
+}
+

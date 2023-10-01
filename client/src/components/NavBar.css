@@ -18,81 +18,28 @@ nav.navbar {
     padding-top: 20px;
   }
 
-  .logo-container {
-    position: relative;
-    display: inline-block;
+  .navbar-brand {
+    padding-right: 10px; 
+  }
+
+a.navbar-link {
+  color: black;
+  text-decoration: none;
 }
 
-.wave {
-  display: none;
-}
-
-.logo-container:hover .wave {
-  display: block;
-}
-
-.logo-container:hover .default {
-  display: none;
-}
-
-nav.navbar .navbar-nav .link.navbar-link {
-  font-weight: 400;
-  color: black !important;
-  letter-spacing: 0.8px;
-  padding: 0 25px;
-  font-size: 20px;
-  opacity: 0.75;
-}
-
-/* nav.navbar .navbar-nav .nav-link.navbar-link:hover {
-    color: red;
-} */
-
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-  opacity: 1;
-}
-span.navbar-text {
+.navbar-nav {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
+.navbar-link {
+  margin-right: 20px; 
+}
+
   
-.navbar-text button {
-    font-weight: 700;
-    color: black;
-    border: 1px solid black;
-    padding: 18px 34px;
-    font-size: 18px;
-    margin-left: 18px;
-    position: relative;
-    background-color: transparent;
-    transition: 0.3s ease-in-out;
-  }
-  .navbar-text button span {
-    z-index: 1;
-  }
-  .navbar-text button::before {
-    content: "";
-    width: 0%;
-    height: 100%;
-    position: absolute;
-    background-color: red;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    transition: 0.3s ease-in-out;
-  }
+
   
-  .navbar-text button:hover {
-    color: #95b4b5;
-  }
+  /* toggler button */
   
-  .navbar-text button:hover::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  }
   nav.navbar .navbar-toggler:active,
   nav.navbar .navbar-toggler:focus {
     outline: none;
@@ -108,14 +55,14 @@ span.navbar-text {
     top: -2px;
   }
   nav.navbar .navbar-toggler-icon:focus {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid black;
   }
   nav.navbar .navbar-toggler-icon:after,
   nav.navbar .navbar-toggler-icon:before {
     width: 24px;
     position: absolute;
     height: 2px;
-    background-color: #fff;
+    background-color:black;
     top: 0;
     left: 0;
     content: "";

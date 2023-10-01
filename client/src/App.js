@@ -10,9 +10,11 @@ import RecipesGrid from "./components/RecipesGrid";
 import { getRecipes } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState([]);
 
   useEffect(() => {
     getRecipes().then((allRecipes) => {
@@ -20,19 +22,36 @@ function App() {
     });
   }, []);
 
-  
+  const onRecipeSelected = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
+  const handleSearch = (input) => {
+    const results = recipes.filter((recipe) => {
+      const lowerInput = input.toLowerCase();
+
+      return (
+        recipe.meal.name.toLowerCase().includes(lowerInput) ||
+        recipe.meal.description.toLowerCase().includes(lowerInput) ||
+        recipe.meal.country_of_origin.toLowerCase().includes(lowerInput) 
+      );
+    });
+    setRecipes(results);
+  };
 
   return (
     <Router>
-      <NavBar />
+      <NavBar handleSearch={handleSearch} />
+
       <div className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
             path="/allrecipes"
-            element={<RecipesGrid recipes={recipes} />}
+            element={
+              <RecipesGrid recipes={recipes} handleSearch={handleSearch} />
+            }
           />
-
           <Route path="/:id" element={<RecipesCard />} />
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/shoppingbag" element={<ShoppingBag />} />

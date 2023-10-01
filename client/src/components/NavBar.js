@@ -4,8 +4,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import SearchBar from "./SearchBar";
 
-function NavBar() {
+function NavBar({handleSearch}) {
   const [activeLink, setActiveLink] = useState("/");
   const [scrolled, setScrolled] = useState(false);
 

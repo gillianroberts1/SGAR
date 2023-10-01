@@ -4,13 +4,18 @@ import { getRecipe } from "../RecipeService";
 import "./RecipeCard.css"
 
 
-const RecipesCard = () => {
+const RecipesCard = ({newFavourites}) => {
   const [recipe, setRecipe] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
     getRecipe(id).then((resp) => setRecipe(resp));
   }, [id]);
+
+    const handleButtonClick = () => { 
+    newFavourites(recipe);
+    console.log(newFavourites)
+  }
 
   if (!recipe) return <p>loading...</p>;
 
@@ -29,6 +34,10 @@ const RecipesCard = () => {
           <p>Preperation time: {recipe.meal.preparation_time} minutes</p>
           <p>Cooking time: {recipe.meal.cooking_time} minutes</p>
           <p>{recipe.meal.country_of_origin}</p>
+
+          <button className="fav-button" onClick={handleButtonClick}>
+              Add to Favourites
+              </button>
         </div>
       </div>
     </>

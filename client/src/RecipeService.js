@@ -7,3 +7,5 @@ export const getRecipes = () => {
 export const getRecipe = (id) => {
   return fetch(`${baseURL}/${id}`).then((res) => res.json());
 };
+
+

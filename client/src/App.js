@@ -14,6 +14,7 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState([]);
 
   useEffect(() => {
@@ -33,10 +34,11 @@ function App() {
       return (
         recipe.meal.name.toLowerCase().includes(lowerInput) ||
         recipe.meal.description.toLowerCase().includes(lowerInput) ||
-        recipe.meal.country_of_origin.toLowerCase().includes(lowerInput) 
+        recipe.meal.country_of_origin.toLowerCase().includes(lowerInput)
       );
     });
-    setRecipes(results);
+
+    setFilteredResults(results);
   };
 
   return (
@@ -49,7 +51,7 @@ function App() {
           <Route
             path="/allrecipes"
             element={
-              <RecipesGrid recipes={recipes} handleSearch={handleSearch} />
+              <RecipesGrid recipes={filteredResults.length ? filteredResults : recipes} handleSearch={handleSearch} />
             }
           />
           <Route path="/:id" element={<RecipesCard />} />

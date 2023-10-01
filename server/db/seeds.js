@@ -694,23 +694,70 @@ db.recipes.insertMany([
           ]
         }
       }
-      
+    ]);
+  
 
+db.favourites.insertMany([
+
+    {
+        meal: {
+          name: "Classic Spaghetti Bolognese",
+          description: "A timeless Italian pasta dish with a rich and hearty meat sauce.",
+          image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-best-spaghetti-bolognese-7e83155.jpg?resize=500,500",
+          ingredients: [
+            "200g ground beef",
+            "1 onion, finely chopped",
+            "2 cloves garlic, minced",
+            "1 can (14 oz) crushed tomatoes",
+            "1/2 cup red wine",
+            "1 tablespoon olive oil",
+            "1 teaspoon dried oregano",
+            "Salt and pepper to taste",
+            "250g spaghetti",
+            "Grated Parmesan cheese for garnish"
+          ],
+          nutrition: {
+            calories: 450,
+            protein: 20,
+            carbohydrates: 40,
+            fiber: 4,
+            sugar: 6,
+            fat: 22
+          },
+          preparation_time: 15,
+          cooking_time: 45,
+          method: [
+            "In a large skillet, heat olive oil and brown the ground beef.",
+            "Add chopped onion and garlic, sauté until fragrant.",
+            "Stir in crushed tomatoes, red wine, and dried oregano. Simmer for 30 minutes, stirring occasionally.",
+            "Season with salt and pepper to taste.",
+            "Boil spaghetti until al dente, drain, and serve with the meat sauce.",
+            "Garnish with grated Parmesan cheese.",
+            "Enjoy your classic Spaghetti Bolognese!"
+          ],
+          vegan: false,
+          vegetarian: false,
+          country_of_origin: "Italy"
+        },
+        shopping_list: {
+          items: [
+            "200g ground beef",
+            "1 onion",
+            "2 cloves garlic",
+            "1 can (14 oz) crushed tomatoes",
+            "1/2 cup red wine",
+            "1 tablespoon olive oil",
+            "1 teaspoon dried oregano",
+            "Salt",
+            "Pepper",
+            "250g spaghetti",
+            "Grated Parmesan cheese"
+          ]
+        }
+      }
 
       
-
-
       
-      
-      
-      
-      
-      
-
-
-      
-      
-
 
       
 

@@ -1,22 +1,33 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getRecipe } from "../RecipeService";
-import "./RecipeCard.css"
+import "./RecipeCard.css";
 
-
-const RecipesCard = () => {
+const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
   const [recipe, setRecipe] = useState(null);
   const { id } = useParams();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getRecipe(id).then((resp) => setRecipe(resp));
   }, [id]);
 
+  const handleButtonClick = () => {
+    console.log("item in recipeCard", recipe);
+    addToFavourite(recipe);
+    navigate("/favourites");
+  };
+
+  const handleRemoveClick = () => {
+    removeFromFavourite(recipe);
+    navigate("/favourites");
+  };
+
   if (!recipe) return <p>loading...</p>;
 
   return (
     <>
-      
       <div className="recipe-card">
         <div className="recipe-card-container">
           <img
@@ -29,6 +40,15 @@ const RecipesCard = () => {
           <p>Preperation time: {recipe.meal.preparation_time} minutes</p>
           <p>Cooking time: {recipe.meal.cooking_time} minutes</p>
           <p>{recipe.meal.country_of_origin}</p>
+          {recipe.meal.favourited ? (
+            <button className="fav-button" onClick={handleRemoveClick}>
+              Remove From Favourites
+            </button>
+          ) : (
+            <button className="fav-button" onClick={handleButtonClick}>
+              Add to Favourites
+            </button>
+          )}
         </div>
       </div>
     </>

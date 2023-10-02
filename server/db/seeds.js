@@ -5,6 +5,7 @@ db.recipes.insertMany([
 
     {
         meal: {
+          favourited: true,
           name: "Classic Spaghetti Bolognese",
           description: "A timeless Italian pasta dish with a rich and hearty meat sauce.",
           image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-best-spaghetti-bolognese-7e83155.jpg?resize=500,500",
@@ -62,6 +63,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: true,
           name: "Vegetable Stir-Fry",
           description: "A quick and healthy stir-fry packed with colorful vegetables and tofu.",
           image: "https://www.wholesomeyum.com/wp-content/uploads/2020/11/wholesomeyum-how-to-stir-fry-vegetables-vegetable-stir-fry-recipe-list-15-500x500.jpg",
@@ -119,6 +121,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Irish Stew",
           description: "A hearty Irish stew with tender lamb, potatoes, carrots, and onions.",
           image: "https://simply-delicious-food.com/wp-content/uploads/2019/02/irish-beef-stew-1-500x500.jpg",
@@ -180,6 +183,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "BBQ Pulled Pork Sandwich",
           description: "A classic American sandwich with tender pulled pork in barbecue sauce on a bun.",
           image: "https://keviniscooking.com/wp-content/uploads/2023/04/Southern-Pulled-Pork-Sandwich-square-500x500.jpg",
@@ -231,6 +235,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Fish and Chips",
           description: "A classic British dish featuring crispy battered fish and thick-cut potato fries.",
           image: "https://www.corriecooks.com/wp-content/uploads/2023/04/Fish-And-Chips-2-500x500.jpg",
@@ -283,6 +288,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Pad Thai",
           description: "A classic Thai stir-fried noodle dish with shrimp, tofu, and a tangy tamarind sauce.",
           image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/07/Pad-Thai-square-FS-29-500x500.jpg",
@@ -343,6 +349,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Greek Salad",
           description: "A refreshing Greek salad with tomatoes, cucumbers, olives, and feta cheese.",
           image: "https://amandascookin.com/wp-content/uploads/2022/05/Greek-Salad-RCSQ-500x500.jpg",
@@ -398,6 +405,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Kung Pao Chicken",
           description: "A spicy and savory Chinese chicken dish with peanuts and vegetables.",
           image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/10/Kung-Pao-Chicken-square-FS-39-new-500x500.jpg",
@@ -461,6 +469,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Chicken Tikka Masala",
           description: "A popular Indian dish with tender chicken in a creamy tomato and spice-infused sauce.",
           image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Chicken-Tikka-Masala-square-FS-51-500x500.jpg",
@@ -523,6 +532,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Coq au Vin",
           description: "A classic French chicken stew simmered in red wine with mushrooms and onions.",
           image: "https://familystylefood.com/wp-content/uploads/2021/12/Coq-Au-Vin-hero-macro-500x500.jpg",
@@ -582,6 +592,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Tacos al Pastor",
           description: "Delicious Mexican street tacos with marinated pork, pineapple, and cilantro.",
           image: "https://www.seasonsandsuppers.ca/wp-content/uploads/2018/08/tacos-al-pastor-1200-500x500.jpg",
@@ -637,6 +648,7 @@ db.recipes.insertMany([
 
       {
         meal: {
+          favourited: false,
           name: "Paella Valenciana",
           description: "A classic Spanish dish with saffron-infused rice, seafood, and vegetables.",
           image: "https://abountifulkitchen.com/wp-content/uploads/2021/07/IMG_9547-500x500.jpg",
@@ -694,23 +706,71 @@ db.recipes.insertMany([
           ]
         }
       }
-      
+    ]);
+  
 
+db.favourites.insertMany([
+
+    {
+        meal: {
+          favourited: false,
+          name: "Classic Spaghetti Bolognese",
+          description: "A timeless Italian pasta dish with a rich and hearty meat sauce.",
+          image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-best-spaghetti-bolognese-7e83155.jpg?resize=500,500",
+          ingredients: [
+            "200g ground beef",
+            "1 onion, finely chopped",
+            "2 cloves garlic, minced",
+            "1 can (14 oz) crushed tomatoes",
+            "1/2 cup red wine",
+            "1 tablespoon olive oil",
+            "1 teaspoon dried oregano",
+            "Salt and pepper to taste",
+            "250g spaghetti",
+            "Grated Parmesan cheese for garnish"
+          ],
+          nutrition: {
+            calories: 450,
+            protein: 20,
+            carbohydrates: 40,
+            fiber: 4,
+            sugar: 6,
+            fat: 22
+          },
+          preparation_time: 15,
+          cooking_time: 45,
+          method: [
+            "In a large skillet, heat olive oil and brown the ground beef.",
+            "Add chopped onion and garlic, sauté until fragrant.",
+            "Stir in crushed tomatoes, red wine, and dried oregano. Simmer for 30 minutes, stirring occasionally.",
+            "Season with salt and pepper to taste.",
+            "Boil spaghetti until al dente, drain, and serve with the meat sauce.",
+            "Garnish with grated Parmesan cheese.",
+            "Enjoy your classic Spaghetti Bolognese!"
+          ],
+          vegan: false,
+          vegetarian: false,
+          country_of_origin: "Italy"
+        },
+        shopping_list: {
+          items: [
+            "200g ground beef",
+            "1 onion",
+            "2 cloves garlic",
+            "1 can (14 oz) crushed tomatoes",
+            "1/2 cup red wine",
+            "1 tablespoon olive oil",
+            "1 teaspoon dried oregano",
+            "Salt",
+            "Pepper",
+            "250g spaghetti",
+            "Grated Parmesan cheese"
+          ]
+        }
+      }
 
       
-
-
       
-      
-      
-      
-      
-      
-
-
-      
-      
-
 
       
 

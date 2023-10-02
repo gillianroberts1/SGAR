@@ -80,24 +80,24 @@ function App() {
     }
   };
 
-  // const favouriteRemoved = (itemToAdd) => {
-  //   const isRecipeInFavorites = favouriteRecipes.some(
-  //     (favRecipe) => favRecipe.meal.name === itemToAdd.meal.name
-  //   );
-  //   if (!isRecipeInFavorites) {
-  //     console.log("item to add", itemToAdd);
-  //     itemToAdd.meal.favourited = false;
-  //     updateRecipe(itemToAdd);
-  //     let recipesCopy = [...recipes];
-  //     for (let rec of recipesCopy) {
-  //       if (rec.meal._id === itemToAdd.meal._id) {
-  //         rec.meal.favourited = false;
-  //       }
-  //     }
-  //     setRecipes(recipesCopy);
-  //     removeFilterFavourites();
-  //   }
-  // };
+  const favouriteRemoved = (itemToRemove) => {
+    const isRecipeInFavorites = favouriteRecipes.some(
+      (favRecipe) => favRecipe.meal.name === itemToRemove.meal.name
+    );
+    if (isRecipeInFavorites) {
+      console.log("item to add", itemToRemove);
+      itemToRemove.meal.favourited = false;
+      updateRecipe(itemToRemove);
+      let recipesCopy = [...recipes];
+      for (let rec of recipesCopy) {
+        if (rec._id === itemToRemove._id) {
+          rec.meal.favourited = false;
+        }
+      }
+      setRecipes(recipesCopy);
+      filterFavourites();
+    }
+  };
 
   const handleSearch = (input) => {
     const results = recipes.filter((recipe) => {
@@ -141,7 +141,12 @@ function App() {
           />
           <Route
             path="/:id"
-            element={<RecipesCard addToFavourite={favouriteSelected} />}
+            element={
+              <RecipesCard
+                addToFavourite={favouriteSelected}
+                removeFromFavourite={favouriteRemoved}
+              />
+            }
           />
           <Route
             path="/favourites"

@@ -1,17 +1,15 @@
 import React from "react";
 import FavRecipe from "./FavRecipe";
 import { Link } from "react-router-dom";
-import {  updateRecipe } from "../RecipeService";
+import { updateRecipe } from "../RecipeService";
 
-const Favourites = ({ favourites, favouriteRemoved }) => {
+const Favourites = ({ favourites }) => {
+  //   const handleDelete = () => {
+  //     updateRecipe(FavRecipe._id).then(() => {
+  //       favouriteRemoved(FavRecipe._id);
+  //     });
+  //   };
 
-    const handleDelete = () => {
-        updateRecipe(FavRecipe._id).then(() => {
-          favouriteRemoved(FavRecipe._id)
-        })
-
-      }
-    
   const nodeElements = favourites.map((recipe) => {
     return (
       <Link to={`/${recipe._id}`} className="recipe-card" key={recipe._id}>
@@ -25,10 +23,8 @@ const Favourites = ({ favourites, favouriteRemoved }) => {
         <p className="recipe-description"> {recipe.meal.description}</p>
         <p className="recipe-cooktime">{recipe.meal.cooking_time} mins</p>
         <p className="recipe-country">{recipe.meal.country_of_origin}</p>
-        <button onClick={handleDelete}>🗑</button>
-
+        {/* <button onClick={handleDelete}>🗑</button> */}
       </Link>
-      
     );
   });
   //   for (let recipe of favourites) {

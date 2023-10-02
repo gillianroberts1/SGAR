@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getRecipe } from "../RecipeService";
 import "./RecipeCard.css";
 
-const RecipesCard = ({ addToFavourite }) => {
+const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
   const [recipe, setRecipe] = useState(null);
   const { id } = useParams();
 
@@ -16,6 +16,11 @@ const RecipesCard = ({ addToFavourite }) => {
   const handleButtonClick = () => {
     console.log("item in recipeCard", recipe);
     addToFavourite(recipe);
+    navigate("/favourites");
+  };
+
+  const handleRemoveClick = () => {
+    removeFromFavourite(recipe);
     navigate("/favourites");
   };
 
@@ -35,10 +40,15 @@ const RecipesCard = ({ addToFavourite }) => {
           <p>Preperation time: {recipe.meal.preparation_time} minutes</p>
           <p>Cooking time: {recipe.meal.cooking_time} minutes</p>
           <p>{recipe.meal.country_of_origin}</p>
-
-          <button className="fav-button" onClick={handleButtonClick}>
-            Add to Favourites
-          </button>
+          {recipe.meal.favourited ? (
+            <button className="fav-button" onClick={handleRemoveClick}>
+              Remove From Favourites
+            </button>
+          ) : (
+            <button className="fav-button" onClick={handleButtonClick}>
+              Add to Favourites
+            </button>
+          )}
         </div>
       </div>
     </>

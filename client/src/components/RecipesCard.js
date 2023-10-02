@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {  getRecipe } from "../RecipeService";
+import { getRecipe } from "../RecipeService";
 import "./RecipeCard.css";
 
-const RecipesCard = ({ newFavourites }) => {
+const RecipesCard = ({ addToFavourite }) => {
   const [recipe, setRecipe] = useState(null);
   const { id } = useParams();
 
@@ -14,12 +14,10 @@ const RecipesCard = ({ newFavourites }) => {
   }, [id]);
 
   const handleButtonClick = () => {
-    newFavourites(recipe);
+    console.log("item in recipeCard", recipe);
+    addToFavourite(recipe);
     navigate("/favourites");
-    console.log(newFavourites);
   };
-
-  
 
   if (!recipe) return <p>loading...</p>;
 

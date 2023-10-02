@@ -9,7 +9,8 @@ export const getRecipe = (id) => {
 };
 
 export const updateRecipe = (recipe) => {
-  let updatedRecipe =  [...recipe ];
+  console.log("update recipe", recipe);
+  let updatedRecipe = { ...recipe };
   delete updatedRecipe._id;
 
   return fetch(baseURL + "/" + recipe._id, {

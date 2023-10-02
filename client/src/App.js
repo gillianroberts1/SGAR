@@ -14,7 +14,6 @@ import RecipesCard from "./components/RecipesCard";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  // const [selectedRecipe, setSelectedRecipe] = useState([]);
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ function App() {
     filterFavourites();
   }, [recipes]);
 
-  // useEffect(() => { 
+  // useEffect(() => {
   //   removeFilterFavourites();
   // }, [ recipes ]);
 
@@ -59,19 +58,20 @@ function App() {
   //   setFavouriteRecipes(newFav);
   // };
 
-
-
   const favouriteSelected = (itemToAdd) => {
     const isRecipeInFavorites = favouriteRecipes.some(
       (favRecipe) => favRecipe.meal.name === itemToAdd.meal.name
     );
+    console.log("itemToAdd in favourite function", itemToAdd);
     if (!isRecipeInFavorites) {
-      console.log("item to add", itemToAdd);
       itemToAdd.meal.favourited = true;
       updateRecipe(itemToAdd);
       let recipesCopy = [...recipes];
       for (let rec of recipesCopy) {
-        if (rec.meal._id === itemToAdd.meal._id) {
+        console.log("rec.meal.id", rec.id);
+        console.log("itemToAdd.meal.id", itemToAdd.id);
+
+        if (rec._id === itemToAdd._id) {
           rec.meal.favourited = true;
         }
       }
@@ -112,11 +112,6 @@ function App() {
     setRecipes(results);
   };
 
-
-
-  
-
-
   // const removeFromFavourites = (removed) => {
   //   const updatedFaves = [];
   //   for (let recipe of favouriteRecipes) {
@@ -146,7 +141,7 @@ function App() {
           />
           <Route
             path="/:id"
-            element={<RecipesCard newFavourites={favouriteSelected} />}
+            element={<RecipesCard addToFavourite={favouriteSelected} />}
           />
           <Route
             path="/favourites"
@@ -154,7 +149,6 @@ function App() {
               <Favourites
                 favourites={favouriteRecipes}
                 // favouriteRemoved={favouriteRemoved}
-
               />
             }
           />

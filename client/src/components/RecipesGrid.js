@@ -22,7 +22,7 @@ const RecipesGrid = ({ recipes, handleSearch }) => {
               <div></div>
               <p className="recipe-name">{recipe.meal.name}</p>
               <p className="recipe-description"> {recipe.meal.description}</p>
-              <p className="recipe-cooktime">{recipe.meal.cooking_time} mins</p>
+              <p className="recipe-cooktime">{recipe.meal.cooking_time + recipe.meal.preparation_time} mins</p>
               <p>
                 Vegetarian:{" "}
                 {recipe.meal.vegetarian ? (

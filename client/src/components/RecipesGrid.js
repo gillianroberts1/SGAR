@@ -1,8 +1,10 @@
 import "./RecipesGrid.css";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 const RecipesGrid = ({ recipes, handleSearch }) => {
+
   return (
     <>
       <SearchBar handleSearch={handleSearch} />
@@ -14,6 +16,18 @@ const RecipesGrid = ({ recipes, handleSearch }) => {
               className="recipe-card"
               key={recipe._id}
             >
+              <div>
+                {recipe.meal.favourited === true ? (
+                  <span>
+                    <FaHeart />
+                  </span>
+                ) : (
+                  <span>
+                    <FaRegHeart />
+                  </span>
+                )}
+              </div>
+
               <img
                 className="small-img"
                 src={recipe.meal.image}
@@ -22,7 +36,9 @@ const RecipesGrid = ({ recipes, handleSearch }) => {
               <div></div>
               <p className="recipe-name">{recipe.meal.name}</p>
               <p className="recipe-description"> {recipe.meal.description}</p>
-              <p className="recipe-cooktime">{recipe.meal.cooking_time + recipe.meal.preparation_time} mins</p>
+              <p className="recipe-cooktime">
+                {recipe.meal.cooking_time + recipe.meal.preparation_time} mins
+              </p>
               <p>
                 Vegetarian:{" "}
                 {recipe.meal.vegetarian ? (

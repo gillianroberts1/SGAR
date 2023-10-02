@@ -109,7 +109,8 @@ function App() {
         recipe.meal.country_of_origin.toLowerCase().includes(lowerInput)
       );
     });
-    setRecipes(results);
+
+    setFilteredResults(results);
   };
 
   // const removeFromFavourites = (removed) => {

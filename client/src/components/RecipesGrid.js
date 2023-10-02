@@ -5,10 +5,6 @@ import SearchBar from "./SearchBar";
 const RecipesGrid = ({ recipes, handleSearch  }) => {
 
 
-
-
-
-
   return (
     <>
       <SearchBar handleSearch={handleSearch} />

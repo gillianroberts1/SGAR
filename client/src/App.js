@@ -11,11 +11,13 @@ import { getRecipes } from "./RecipeService";
 import { updateRecipe } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
+import Cuisine from "./components/Cuisine";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
+  
 
 
   useEffect(() => {
@@ -132,6 +134,7 @@ function App() {
       <div className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cuisine/:cuisine" element={<Cuisine/>}/>
           <Route
             path="/allrecipes"
             element={

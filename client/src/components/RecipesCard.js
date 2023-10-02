@@ -30,16 +30,6 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
     <>
       <div className="recipe-card">
         <div className="recipe-card-container">
-          <img
-            className="recipe-card-image"
-            src={recipe.meal.image}
-            alt={recipe.meal.name}
-          />
-          <h3>{recipe.meal.name}</h3>
-          <p>{recipe.meal.description}</p>
-          <p>Preperation time: {recipe.meal.preparation_time} minutes</p>
-          <p>Cooking time: {recipe.meal.cooking_time} minutes</p>
-          <p>{recipe.meal.country_of_origin}</p>
           {recipe.meal.favourited ? (
             <button className="fav-button" onClick={handleRemoveClick}>
               Remove From Favourites
@@ -49,6 +39,60 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
               Add to Favourites
             </button>
           )}
+          <br></br>
+          <img
+            className="recipe-card-image"
+            src={recipe.meal.image}
+            alt={recipe.meal.name}
+          />
+
+          <h3>{recipe.meal.name}</h3>
+          <p>{recipe.meal.description}</p>
+          <p>
+            Vegetarian:{" "}
+            {recipe.meal.vegetarian ? (
+              <span>&#10003;</span>
+            ) : (
+              <span>&#10008;</span>
+            )}
+          </p>
+          <p>
+            Vegan:{" "}
+            {recipe.meal.vegan ? (
+              <span>&#10003;</span>
+            ) : (
+              <span>&#10008;</span>
+            )}
+          </p>
+          <p>Preperation time: {recipe.meal.preparation_time} minutes</p>
+          <p>Cooking time: {recipe.meal.cooking_time} minutes</p>
+          <p>Country of origin: {recipe.meal.country_of_origin}</p>
+          <p>
+            Nutrition:{""}
+            {Object.entries(recipe.meal.nutrition).map(([name, nutrition]) => (
+              <li className="nutrition" key={name}>
+                {name}: {nutrition}
+              </li>
+            ))}
+          </p>
+          <p>
+            Ingredients:{" "}
+            {Object.entries(recipe.meal.ingredients).map(
+              ([name, ingredients]) => (
+                <li className="ingredients" key={name}>
+                  {ingredients}
+                </li>
+              )
+            )}
+          </p>
+          <p>
+            Instructions:{" "}
+            {Object.entries(recipe.meal.method).map(([name, method]) => (
+              <li className="method" key={name}>
+                {method}
+              </li>
+            ))}
+          </p>
         </div>
       </div>
     </>

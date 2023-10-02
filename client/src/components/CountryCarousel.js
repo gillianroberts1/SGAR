@@ -11,7 +11,7 @@ import mexican from "../assets/images/mexican.png";
 import spanish from "../assets/images/spanish.png";
 
 import { useNavigate } from "react-router-dom";
-import "./CountryCarousel.css"
+import "./CountryCarousel.css";
 
 const CountryCarousel = ({ onImageClick }) => {
   const navigate = useNavigate();
@@ -20,69 +20,69 @@ const CountryCarousel = ({ onImageClick }) => {
     {
       country: "Italy",
       image: italian,
-      cuisine: "italian",
+      cuisine: "Italian",
     },
     {
       country: "China",
       image: chinese,
-      cuisine: "chinese",
+      cuisine: "Chinese",
     },
     {
       country: "Ireland",
       image: irish,
-      cuisine: "irish",
+      cuisine: "Irish",
     },
     {
-        country: "United States",
-        image: american,
-        cuisine: "American",
-      },
-      {
-        country: "United Kingdom",
-        image: english,
-        cuisine: "british",
-      },
-      {
-        country: "Thailand",
-        image: thai,
-        cuisine: "thai",
-      },
-      {
-        country: "India",
-        image: indian,
-        cuisine: "indian",
-      },
-      {
-        country: "France",
-        image: french,
-        cuisine: "french",
-      },
-      {
-        country: "Mexico",
-        image: mexican,
-        cuisine: "french",
-      },
-      {
-        country: "Spain",
-        image: spanish,
-        cuisine: "spanish",
-      }
-          
-
-
+      country: "United States",
+      image: american,
+      cuisine: "American",
+    },
+    {
+      country: "United Kingdom",
+      image: english,
+      cuisine: "British",
+    },
+    {
+      country: "Thailand",
+      image: thai,
+      cuisine: "Thai",
+    },
+    {
+      country: "India",
+      image: indian,
+      cuisine: "Indian",
+    },
+    {
+      country: "France",
+      image: french,
+      cuisine: "French",
+    },
+    {
+      country: "Mexico",
+      image: mexican,
+      cuisine: "Mexican",
+    },
+    {
+      country: "Spain",
+      image: spanish,
+      cuisine: "Spanish",
+    },
   ];
   return (
-    <Carousel autoPlay={false}>
-      {recipes.map(({ country, image }) => (
+    <div className="carousel-container">
+    <Carousel autoPlay={false} showIndicators={false}>
+      {recipes.map(({ country, image, cuisine }) => (
         <div
           className="carousel-element"
           onClick={() => navigate(`/cuisine/${country}`)}
           key={country}
         >
+          <p>{cuisine}</p>
           <img src={image} alt={country} />
         </div>
       ))}
     </Carousel>
+    </div>
   );
 };
 

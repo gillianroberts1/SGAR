@@ -15,6 +15,8 @@ import RecipesCard from "./components/RecipesCard";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
+
 
   useEffect(() => {
     getRecipes().then((allRecipes) => {
@@ -134,7 +136,8 @@ function App() {
             path="/allrecipes"
             element={
               <RecipesGrid
-                recipes={recipes}
+
+                recipes={filteredResults.length ? filteredResults : recipes}
                 handleSearch={handleSearch}
                 updateRecipe={updateRecipe}
               />

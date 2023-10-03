@@ -8,6 +8,10 @@ export const getRecipe = (id) => {
   return fetch(`${baseURL}/${id}`).then((res) => res.json());
 };
 
+export const getRecipesForCountry = (country) => {
+  return fetch(`${baseURL}/country/${country}`).then((res) => res.json());
+};
+
 export const updateRecipe = (recipe) => {
   console.log("update recipe", recipe);
   let updatedRecipe = { ...recipe };

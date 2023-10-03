@@ -13,3 +13,14 @@ html {
   padding-top:110px;
 }
 
+body {
+  background-color: #00CFC8;
+}
+
+
+@media (min-width: 1700px) {
+  main .container {
+    max-width: 100%;
+    padding: 0 150px;
+  }
+}

@@ -77,8 +77,10 @@ const CountryCarousel = ({ onImageClick }) => {
           onClick={() => navigate(`/cuisine/${country}`)}
           key={country}
         >
+          <div className="country-image">
           <p>{cuisine}</p>
           <img src={image} alt={country} />
+          </div>
         </div>
       ))}
     </Carousel>

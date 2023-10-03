@@ -12,13 +12,12 @@ import { updateRecipe } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
 import Cuisine from "./components/Cuisine";
+import Header from "./components/Header";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
-  
-
 
   useEffect(() => {
     getRecipes().then((allRecipes) => {
@@ -117,58 +116,49 @@ function App() {
     setFilteredResults(results);
   };
 
-  // const removeFromFavourites = (removed) => {
-  //   const updatedFaves = [];
-  //   for (let recipe of favouriteRecipes) {
-  //     if (recipe.meal.name !== removed.name) {
-  //       updatedFaves.push(recipe);
-  //     }
-  //   }
-  //   setFavouriteRecipes(updatedFaves);
-  // };
-
   return (
-    <Router>
-      <NavBar handleSearch={handleSearch} />
+    <>
+      <Router>
+        <Header handleSearch={handleSearch} />
 
-      <div className="page-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cuisine/:cuisine" element={<Cuisine/>}/>
-          <Route
-            path="/allrecipes"
-            element={
-              <RecipesGrid
-
-                recipes={filteredResults.length ? filteredResults : recipes}
-                handleSearch={handleSearch}
-                updateRecipe={updateRecipe}
-              />
-            }
-          />
-          <Route
-            path="/:id"
-            element={
-              <RecipesCard
-                addToFavourite={favouriteSelected}
-                removeFromFavourite={favouriteRemoved}
-              />
-            }
-          />
-          <Route
-            path="/favourites"
-            element={
-              <Favourites
-                favourites={favouriteRecipes}
-                // favouriteRemoved={favouriteRemoved}
-              />
-            }
-          />
-          <Route path="/shoppingbag" element={<ShoppingBag />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </div>
-    </Router>
+        <div className="page-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cuisine/:cuisine" element={<Cuisine />} />
+            <Route
+              path="/allrecipes"
+              element={
+                <RecipesGrid
+                  recipes={filteredResults.length ? filteredResults : recipes}
+                  handleSearch={handleSearch}
+                  updateRecipe={updateRecipe}
+                />
+              }
+            />
+            <Route
+              path="/:id"
+              element={
+                <RecipesCard
+                  addToFavourite={favouriteSelected}
+                  removeFromFavourite={favouriteRemoved}
+                />
+              }
+            />
+            <Route
+              path="/favourites"
+              element={
+                <Favourites
+                  favourites={favouriteRecipes}
+                  // favouriteRemoved={favouriteRemoved}
+                />
+              }
+            />
+            <Route path="/shoppingbag" element={<ShoppingBag />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 

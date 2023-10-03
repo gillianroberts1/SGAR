@@ -42,7 +42,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "Italy"
+          country_of_origin: "Italian"
         },
         shopping_list: {
           items: [
@@ -100,7 +100,7 @@ db.recipes.insertMany([
           ],
           vegan: true,
           vegetarian: true,
-          country_of_origin: "China"
+          country_of_origin: "Chinese"
         },
         shopping_list: {
           items: [
@@ -160,7 +160,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "Ireland"
+          country_of_origin: "Irish"
         },
         shopping_list: {
           items: [
@@ -217,7 +217,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "United States"
+          country_of_origin: "American"
         },
         shopping_list: {
           items: [
@@ -269,7 +269,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "United Kingdom"
+          country_of_origin: "British"
         },
         shopping_list: {
           items: [
@@ -327,7 +327,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "Thailand"
+          country_of_origin: "Thai"
         },
         shopping_list: {
           items: [
@@ -384,7 +384,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: true,
-          country_of_origin: "Greece"
+          country_of_origin: "Greek"
         },
         shopping_list: {
           items: [
@@ -445,7 +445,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "China"
+          country_of_origin: "Chinese"
         },
         shopping_list: {
           items: [
@@ -508,7 +508,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "India"
+          country_of_origin: "Indian"
         },
         shopping_list: {
           items: [
@@ -570,7 +570,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "France"
+          country_of_origin: "French"
         },
         shopping_list: {
           items: [
@@ -628,7 +628,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "Mexico"
+          country_of_origin: "Mexican"
         },
         shopping_list: {
           items: [
@@ -686,7 +686,7 @@ db.recipes.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "Spain"
+          country_of_origin: "Spanish"
         },
         shopping_list: {
           items: [
@@ -747,7 +747,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Mexico"
+        country_of_origin: "Mexican"
       },
       shopping_list: {
         items: [
@@ -804,7 +804,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "China"
+        country_of_origin: "Chinese"
       },
       shopping_list: {
         items: [
@@ -860,7 +860,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "Italy"
+        country_of_origin: "Italian"
       },
       shopping_list: {
         items: [
@@ -914,7 +914,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Thailand"
+        country_of_origin: "Thai"
       },
       shopping_list: {
         items: [
@@ -964,7 +964,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "Italy"
+        country_of_origin: "Italian"
       },
       shopping_list: {
         items: [
@@ -1016,7 +1016,7 @@ db.recipes.insertMany([
         ],
         vegan: true,
         vegetarian: true,
-        country_of_origin: "Thailand"
+        country_of_origin: "Thai"
       },
       shopping_list: {
         items: [
@@ -1069,7 +1069,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Italy"
+        country_of_origin: "Italian"
       },
       shopping_list: {
         items: [
@@ -1120,7 +1120,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "United States"
+        country_of_origin: "American"
       },
       shopping_list: {
         items: [
@@ -1174,7 +1174,7 @@ db.recipes.insertMany([
         ],
         vegan: true,
         vegetarian: true,
-        country_of_origin: "India"
+        country_of_origin: "Indian"
       },
       shopping_list: {
         items: [
@@ -1225,7 +1225,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "United States"
+        country_of_origin: "American"
       },
       shopping_list: {
         items: [
@@ -1276,7 +1276,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Thailand"
+        country_of_origin: "Thai"
       },
       shopping_list: {
         items: [
@@ -1332,7 +1332,7 @@ db.recipes.insertMany([
         ],
         vegan: true,
         vegetarian: true,
-        country_of_origin: "United States"
+        country_of_origin: "American"
       },
       shopping_list: {
         items: [
@@ -1391,7 +1391,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Italy"
+        country_of_origin: "Italian"
       },
       shopping_list: {
         items: [
@@ -1447,7 +1447,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "United States"
+        country_of_origin: "American"
       },
       shopping_list: {
         items: [
@@ -1506,7 +1506,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "Italy"
+        country_of_origin: "Italian"
       },
       shopping_list: {
         items: [
@@ -1562,7 +1562,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "China"
+        country_of_origin: "Chinese"
       },
       shopping_list: {
         items: [
@@ -1613,7 +1613,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "United States"
+        country_of_origin: "American"
       },
       shopping_list: {
         items: [
@@ -1665,7 +1665,7 @@ db.recipes.insertMany([
         ],
         vegan: true,
         vegetarian: true,
-        country_of_origin: "China"
+        country_of_origin: "Chinese"
       },
       shopping_list: {
         items: [
@@ -1719,7 +1719,7 @@ db.recipes.insertMany([
         ],
         vegan: true,
         vegetarian: true,
-        country_of_origin: "Various"
+        country_of_origin: "International"
       },
       shopping_list: {
         items: [
@@ -1773,7 +1773,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "India"
+        country_of_origin: "Indian"
       },
       shopping_list: {
         items: [
@@ -1824,7 +1824,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Jamaica"
+        country_of_origin: "Jamaican"
       },
       shopping_list: {
         items: [
@@ -1879,7 +1879,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Morocco"
+        country_of_origin: "Moroccan"
       },
       shopping_list: {
         items: [
@@ -1936,7 +1936,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Ethiopia"
+        country_of_origin: "Ethiopian"
       },
       shopping_list: {
         items: [
@@ -1991,7 +1991,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Mexico"
+        country_of_origin: "Mexican"
       },
       shopping_list: {
         items: [
@@ -2045,7 +2045,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "Japan"
+        country_of_origin: "Japanese"
       },
       shopping_list: {
         items: [
@@ -2104,7 +2104,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "India"
+        country_of_origin: "Indian"
       },
       shopping_list: {
         items: [
@@ -2171,7 +2171,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "China"
+        country_of_origin: "Chinese"
       },
       shopping_list: {
         items: [
@@ -2232,7 +2232,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Japan"
+        country_of_origin: "Japanese"
       },
       shopping_list: {
         items: [
@@ -2296,7 +2296,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "West Africa"
+        country_of_origin: "African"
       },
       shopping_list: {
         items: [
@@ -2361,7 +2361,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Jamaica"
+        country_of_origin: "Jamaican"
       },
       shopping_list: {
         items: [
@@ -2412,7 +2412,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Mexico"
+        country_of_origin: "Mexican"
       },
       shopping_list: {
         items: [
@@ -2469,7 +2469,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Greece"
+        country_of_origin: "Greek"
       },
       shopping_list: {
         items: [
@@ -2526,7 +2526,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "China"
+        country_of_origin: "Chinese"
       },
       shopping_list: {
         items: [
@@ -2576,7 +2576,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: true,
-        country_of_origin: "Mexico"
+        country_of_origin: "Mexican"
       },
       shopping_list: {
         items: [
@@ -2631,7 +2631,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Scotland"
+        country_of_origin: "Scottish"
       },
       shopping_list: {
         items: [
@@ -2688,7 +2688,7 @@ db.recipes.insertMany([
         ],
         vegan: false,
         vegetarian: false,
-        country_of_origin: "Scotland"
+        country_of_origin: "Scottish"
       },
       shopping_list: {
         items: [
@@ -2748,7 +2748,7 @@ db.favourites.insertMany([
           ],
           vegan: false,
           vegetarian: false,
-          country_of_origin: "Italy"
+          country_of_origin: "Italian"
         },
         shopping_list: {
           items: [

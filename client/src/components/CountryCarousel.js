@@ -18,52 +18,52 @@ const CountryCarousel = ({ onImageClick }) => {
 
   const recipes = [
     {
-      country: "Italy",
+      country: "Italian",
       image: italian,
       cuisine: "Italian",
     },
     {
-      country: "China",
+      country: "Chinese",
       image: chinese,
       cuisine: "Chinese",
     },
     {
-      country: "Ireland",
+      country: "Irish",
       image: irish,
       cuisine: "Irish",
     },
     {
-      country: "United States",
+      country: "American",
       image: american,
       cuisine: "American",
     },
     {
-      country: "United Kingdom",
+      country: "British",
       image: english,
       cuisine: "British",
     },
     {
-      country: "Thailand",
+      country: "Thai",
       image: thai,
       cuisine: "Thai",
     },
     {
-      country: "India",
+      country: "Indian",
       image: indian,
       cuisine: "Indian",
     },
     {
-      country: "France",
+      country: "French",
       image: french,
       cuisine: "French",
     },
     {
-      country: "Mexico",
+      country: "Mexican",
       image: mexican,
       cuisine: "Mexican",
     },
     {
-      country: "Spain",
+      country: "Spanish",
       image: spanish,
       cuisine: "Spanish",
     },

@@ -12,9 +12,9 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
 
   return (
   <>
-    
-      {showSearchBar && <SearchBar handleSearch={handleSearch} />}
     <div className="recipies-grid">
+      {showSearchBar && <SearchBar handleSearch={handleSearch} />}
+    
       <div className="all-recipes-container">
         {sortedRecipes &&
           sortedRecipes.map((recipe) => (
@@ -50,7 +50,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
               <p className="recipe-cooktime">
                 {recipe.meal.cooking_time + recipe.meal.preparation_time} mins
               </p>
-              <p>
+              <p className="recipe-vegetarian">
                 Vegetarian:{" "}
                 {recipe.meal.vegetarian ? (
                   <span>&#10003;</span>
@@ -58,7 +58,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
                   <span>&#10008;</span>
                 )}
               </p>
-              <p>
+              <p className="recipe-vegan">
                 Vegan:{" "}
                 {recipe.meal.vegan ? (
                   <span>&#10003;</span>

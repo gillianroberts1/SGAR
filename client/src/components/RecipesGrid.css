@@ -1,5 +1,5 @@
 .recipies-grid {
-  margin: 150px 80px;
+  margin: 200px 80px;
 }
 
 .all-recipes-container {
@@ -42,5 +42,24 @@ p.recipe-name {
 }
 
 .fav-hearts {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.recipe-description {
+  font-size: 13px;
+}
+.recipe-cooktime {
+  font-size: 13px;
+}
+.recipe-vegetarian{
+  font-size: 13px;
+
+}
+.recipe-vegan{
+  font-size: 13px;
+
+}
+.recipe-country{
+  font-size: 13px;
+
 }

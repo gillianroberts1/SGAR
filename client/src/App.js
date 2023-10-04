@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import RecipesGrid from "./components/RecipesGrid";
 import { getRecipes } from "./RecipeService";
 import { updateRecipe } from "./RecipeService";
+import { updateShoppingBag } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
 import Cuisine from "./components/Cuisine";
@@ -16,7 +17,13 @@ import Cuisine from "./components/Cuisine";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
+  const [shoppingBag, setShoppingBag] = useState([]);
+
+
   const [filteredResults, setFilteredResults] = useState([]);
+
+
+
   
 
 
@@ -30,13 +37,10 @@ function App() {
     filterFavourites();
   }, [recipes]);
 
-  // useEffect(() => {
-  //   removeFilterFavourites();
-  // }, [ recipes ]);
+  useEffect(() => {
+    filterShoppingBag();
+  }, [recipes])
 
-  // const onRecipeSelected = (recipe) => {
-  //   setSelectedRecipe(recipe);
-  // };
 
   const filterFavourites = () => {
     const newFav = [];
@@ -50,17 +54,6 @@ function App() {
     setFavouriteRecipes(newFav);
   };
 
-  // const removeFilterFavourites = () => {
-  //   const newFav = [];
-  //   if (recipes.length > 0) {
-  //     for (let recipe of recipes) {
-  //       if (recipe.meal.favourited === false) {
-  //         newFav.push(recipe);
-  //       }
-  //     }
-  //   }
-  //   setFavouriteRecipes(newFav);
-  // };
 
   const favouriteSelected = (itemToAdd) => {
     const isRecipeInFavorites = favouriteRecipes.some(
@@ -100,6 +93,59 @@ function App() {
       }
       setRecipes(recipesCopy);
       filterFavourites();
+    }
+  };
+
+  const filterShoppingBag = () => {
+    const newBag = [];
+    if (recipes.length > 0) {
+      for (let recipe of recipes) {
+        if (recipe.meal.in_shopping_bag === true) {
+          newBag.push(recipe);
+        }
+      }
+    }
+    setShoppingBag(newBag);
+  };
+
+  const bagSelected = (ingToAdd) => {
+    const isRecipeInBag = shoppingBag.some(
+      (shopBagRecipe) => shopBagRecipe.meal.name === ingToAdd.meal.name
+    );
+    console.log("ingToAdd in favourite function", ingToAdd);
+    if (!isRecipeInBag) {
+      ingToAdd.meal.in_shopping_bag = true;
+      updateRecipe(ingToAdd);
+      let bagCopy = [...recipes];
+      for (let bag of bagCopy) {
+        console.log("rec.meal.id", bag.id);
+        console.log("itemToAdd.meal.id", ingToAdd.id);
+
+        if (bag._id === ingToAdd._id) {
+          bag.meal.in_shopping_bag = true;
+        }
+      }
+      setRecipes(bagCopy);
+      filterShoppingBag();
+    }
+  };
+
+  const bagRemoved = (ingToRemove) => {
+    const isRecipeInBag = shoppingBag.some(
+      (shopBagRecipe) => shopBagRecipe.meal.name === ingToRemove.meal.name
+    );
+    if (isRecipeInBag) {
+      console.log("ing to add", ingToRemove);
+      ingToRemove.meal.in_shopping_bag = false;
+      updateRecipe(ingToRemove);
+      let bagCopy = [...recipes];
+      for (let bag of bagCopy) {
+        if (bag._id === ingToRemove._id) {
+          bag.meal.in_shopping_bag = false;
+        }
+      }
+      setRecipes(bagCopy);
+      filterShoppingBag();
     }
   };
 
@@ -152,6 +198,8 @@ function App() {
               <RecipesCard
                 addToFavourite={favouriteSelected}
                 removeFromFavourite={favouriteRemoved}
+                addToShoppingBag={bagSelected}
+                removeFromShoppingBag={bagRemoved}
               />
             }
           />
@@ -164,7 +212,7 @@ function App() {
               />
             }
           />
-          <Route path="/shoppingbag" element={<ShoppingBag />} />
+          <Route path="/shoppingbag" element={<ShoppingBag shoppingBag={shoppingBag}/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

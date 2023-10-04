@@ -55,11 +55,11 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite, addToShoppingBag, re
           {/* add to shopping bag button */}
           {recipe.meal.in_shopping_bag ? (
             <button className="bag-button" onClick={handleRemoveBagClick}>
-              Remove From Shopping Bag
+              Remove From Shopping List
             </button>
           ) : (
             <button className="bag-button" onClick={handleButtonBagClick}>
-              Add to Shopping Bag
+              Add to Shopping List
             </button>
           )}
           {/*  */}

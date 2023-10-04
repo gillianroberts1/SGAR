@@ -7,11 +7,12 @@
   margin: 0 auto;
 }
 
-/* @media (max-width: 767px) {
-  .all-recipes-container {
+ @media (max-width: 767px) {
+  .shop-card {
     display: block;
+    padding: 12px;
   }
-} */
+} 
 
 .shop-card {
   background: rgba(201, 207, 207, 1);

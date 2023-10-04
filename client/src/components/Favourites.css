@@ -10,8 +10,10 @@
 }
 
 @media (max-width: 767px) {
-  .all-recipes-container {
-    display: block;
+  .fav-recipe-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
   }
 }
 

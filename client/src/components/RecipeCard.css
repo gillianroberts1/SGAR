@@ -47,11 +47,18 @@
   font-weight: bold;
 }
 
-.bag-button:hover{
-    color: #03fff6;
+.bag-button:hover {
+  color: #03fff6;
 }
 
-.fav-button:hover{
-    color: #03fff6;
+.fav-button:hover {
+  color: #03fff6;
 }
 
+@media (max-width: 767px) {
+  .one-recipe-card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+}

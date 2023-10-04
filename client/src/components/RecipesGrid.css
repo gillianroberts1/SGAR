@@ -42,5 +42,9 @@ p.recipe-name {
 }
 
 .fav-hearts {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.recipe-description{
+  font-size: 13px;
 }

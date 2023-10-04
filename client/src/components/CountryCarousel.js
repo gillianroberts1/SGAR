@@ -70,7 +70,7 @@ const CountryCarousel = ({ onImageClick }) => {
   ];
   return (
     <div className="carousel-container">
-    <Carousel autoPlay={false} showIndicators={false}>
+    <Carousel autoPlay={false} showIndicators={false} showStatus={false}>
       {recipes.map(({ country, image, cuisine }) => (
         <div
           className="carousel-element"

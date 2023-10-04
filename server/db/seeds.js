@@ -6,6 +6,7 @@ db.recipes.insertMany([
     {
         meal: {
           favourited: true,
+          in_shopping_bag: true,
           name: "Classic Spaghetti Bolognese",
           description: "A timeless Italian pasta dish with a rich and hearty meat sauce.",
           image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-best-spaghetti-bolognese-7e83155.jpg?resize=500,500",
@@ -64,6 +65,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: true,
+          in_shopping_bag: false,
           name: "Vegetable Stir-Fry",
           description: "A quick and healthy stir-fry packed with colorful vegetables and tofu.",
           image: "https://www.wholesomeyum.com/wp-content/uploads/2020/11/wholesomeyum-how-to-stir-fry-vegetables-vegetable-stir-fry-recipe-list-15-500x500.jpg",
@@ -122,6 +124,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Irish Stew",
           description: "A hearty Irish stew with tender lamb, potatoes, carrots, and onions.",
           image: "https://simply-delicious-food.com/wp-content/uploads/2019/02/irish-beef-stew-1-500x500.jpg",
@@ -184,6 +187,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "BBQ Pulled Pork Sandwich",
           description: "A classic American sandwich with tender pulled pork in barbecue sauce on a bun.",
           image: "https://keviniscooking.com/wp-content/uploads/2023/04/Southern-Pulled-Pork-Sandwich-square-500x500.jpg",
@@ -236,6 +240,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Fish and Chips",
           description: "A classic British dish featuring crispy battered fish and thick-cut potato fries.",
           image: "https://www.corriecooks.com/wp-content/uploads/2023/04/Fish-And-Chips-2-500x500.jpg",
@@ -289,6 +294,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Pad Thai",
           description: "A classic Thai stir-fried noodle dish with shrimp, tofu, and a tangy tamarind sauce.",
           image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/07/Pad-Thai-square-FS-29-500x500.jpg",
@@ -350,6 +356,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Greek Salad",
           description: "A refreshing Greek salad with tomatoes, cucumbers, olives, and feta cheese.",
           image: "https://amandascookin.com/wp-content/uploads/2022/05/Greek-Salad-RCSQ-500x500.jpg",
@@ -406,6 +413,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Kung Pao Chicken",
           description: "A spicy and savory Chinese chicken dish with peanuts and vegetables.",
           image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/10/Kung-Pao-Chicken-square-FS-39-new-500x500.jpg",
@@ -470,6 +478,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Chicken Tikka Masala",
           description: "A popular Indian dish with tender chicken in a creamy tomato and spice-infused sauce.",
           image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Chicken-Tikka-Masala-square-FS-51-500x500.jpg",
@@ -533,6 +542,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Coq au Vin",
           description: "A classic French chicken stew simmered in red wine with mushrooms and onions.",
           image: "https://familystylefood.com/wp-content/uploads/2021/12/Coq-Au-Vin-hero-macro-500x500.jpg",
@@ -593,6 +603,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Tacos al Pastor",
           description: "Delicious Mexican street tacos with marinated pork, pineapple, and cilantro.",
           image: "https://www.seasonsandsuppers.ca/wp-content/uploads/2018/08/tacos-al-pastor-1200-500x500.jpg",
@@ -649,6 +660,7 @@ db.recipes.insertMany([
       {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Paella Valenciana",
           description: "A classic Spanish dish with saffron-infused rice, seafood, and vegetables.",
           image: "https://abountifulkitchen.com/wp-content/uploads/2021/07/IMG_9547-500x500.jpg",
@@ -710,6 +722,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Chicken Enchiladas",
         description: "A delicious Mexican dish with shredded chicken wrapped in tortillas and smothered in enchilada sauce.",
         image: "https://www.jessicagavin.com/wp-content/uploads/2018/04/chicken-enchiladas-5-1200-500x500.jpg",
@@ -769,6 +782,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Beef and Broccoli Stir-Fry",
         description: "A savory Chinese stir-fry with tender beef slices and broccoli florets in a flavorful sauce.",
         image: "https://www.chewoutloud.com/wp-content/uploads/2020/02/Beef-and-Broccoli-0-500x500.jpg",
@@ -824,6 +838,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Margherita Pizza",
         description: "A classic Italian pizza topped with tomato sauce, fresh mozzarella, and basil leaves.",
         image: "https://www.scrumptiously.com/wp-content/uploads/2023/07/MargheritaPizza-500x500.webp",
@@ -878,6 +893,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Thai Green Curry",
         description: "A fragrant and spicy Thai curry with chicken, vegetables, and coconut milk.",
         image: "https://www.whiskaffair.com/wp-content/uploads/2016/07/Thai-Green-Curry-3-500x500.jpg",
@@ -934,6 +950,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Caprese Salad",
         description: "A simple Italian salad featuring fresh tomatoes, mozzarella cheese, basil, and a drizzle of balsamic glaze.",
         image: "https://carlsbadcravings.com/wp-content/uploads/2023/08/Caprese-Salad-3-500x500.jpg",
@@ -980,6 +997,7 @@ db.recipes.insertMany([
     },{
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Vegetarian Pad Thai",
         description: "A delicious and tangy Thai stir-fried noodle dish with tofu, vegetables, and a flavorful tamarind sauce.",
         image: "https://pinchofyum.com/wp-content/uploads/Vegetarian-Pad-Thai-Recipe.jpg",
@@ -1037,6 +1055,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Spaghetti Carbonara",
         description: "A classic Italian pasta dish with creamy egg sauce, crispy bacon, and Parmesan cheese.",
         image: "https://www.sipandfeast.com/wp-content/uploads/2022/09/spaghetti-carbonara-recipe-snippet-500x500.jpg",
@@ -1086,6 +1105,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Spinach and Mushroom Stuffed Chicken Breast",
         description: "Tender chicken breasts stuffed with a flavorful mixture of spinach, mushrooms, and cheese, then baked to perfection.",
         image: "https://cookingformysoul.com/wp-content/uploads/2022/02/spinach-stuffed-chicken-feat-min-500x500.jpg",
@@ -1139,6 +1159,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Vegetable Curry",
         description: "A hearty and aromatic Indian curry made with a variety of vegetables, spices, and coconut milk.",
         image: "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/07/vegetable-curry-recipe-500x500.jpg",
@@ -1194,6 +1215,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Grilled Salmon with Lemon-Dill Sauce",
         description: "Juicy grilled salmon fillets served with a zesty lemon and dill sauce.",
         image: "https://laughingspatula.com/wp-content/uploads/2020/07/salmon-heropic-500x500.jpg",
@@ -1242,6 +1264,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Spicy Thai Basil Chicken (Pad Krapow Gai)",
         description: "A Thai street food favorite with minced chicken, Thai basil, and fiery chili sauce.",
         image: "https://www.siftandsimmer.com/wp-content/uploads/2021/11/pad-krapow-gai-thai-basil-chicken3-500x500.jpg",
@@ -1296,6 +1319,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Vegetarian Chilli",
         description: "A hearty and flavorful chilli loaded with beans, vegetables, and spices.",
         image: "https://wholefoodsoulfoodkitchen.com/wp-content/uploads/2022/08/vegetarian-chili-con-carne-recipe-1-500x500.jpg",
@@ -1357,6 +1381,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Shrimp Scampi Pasta",
         description: "A delightful Italian-inspired dish featuring succulent shrimp, garlic, white wine, and lemon over linguine pasta.",
         image: "https://simplyhomecooked.com/wp-content/uploads/2021/06/shrimp-scampi-pasta-n-500x500.jpg",
@@ -1411,6 +1436,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Quinoa and Black Bean Stuffed Peppers",
         description: "Colorful bell peppers stuffed with a nutritious mixture of quinoa, black beans, corn, and spices.",
         image: "https://www.thegardengrazer.com/wp-content/uploads/2012/03/bean-quinoa-stuffed-peppers-75-500x500.jpg",
@@ -1468,6 +1494,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Mushroom Risotto",
         description: "Creamy and comforting Italian risotto made with Arborio rice, mushrooms, white wine, and Parmesan cheese.",
         image: "https://www.savoryexperiments.com/wp-content/uploads/2023/02/Mushroom-Risotto-16-500x500.jpg",
@@ -1528,6 +1555,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Chicken and Vegetable Stir-Fry",
         description: "A healthy stir-fry with tender chicken, colorful vegetables, and a savory stir-fry sauce.",
         image: "https://www.cookingclassy.com/wp-content/uploads/2019/12/chicken-stir-fry-1-500x500.jpg",
@@ -1581,6 +1609,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Veggie and Hummus Wrap",
         description: "A healthy and satisfying wrap filled with colorful vegetables, creamy hummus, and a sprinkle of feta cheese.",
         image: "https://www.foodiecrush.com/wp-content/uploads/2015/05/Hummus-Veggie-Wrap-foodiecrush.com-16-1-500x500.jpg",
@@ -1632,6 +1661,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Tofu and Vegetable Stir-Fry",
         description: "A vegan-friendly stir-fry featuring crispy tofu, assorted vegetables, and a savory stir-fry sauce.",
         image: "https://www.funfoodfrolic.com/wp-content/uploads/2020/03/Tofu-Stir-Fry-Thumbnail-500x500.jpg",
@@ -1684,6 +1714,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Lentil and Vegetable Soup",
         description: "A hearty and nutritious soup made with green lentils, a variety of vegetables, and aromatic herbs and spices.",
         image: "https://desireerd.com/wp-content/uploads/2020/02/lentil-vegetable-soup-500x500.jpg",
@@ -1741,6 +1772,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Tandoori Chicken",
         description: "A flavorful Indian dish with marinated chicken, yogurt, and a blend of aromatic spices, roasted to perfection.",
         image: "https://vikalinka.com/wp-content/uploads/2022/05/Tandoori-Chicken-Air-Fryer-13-Edit-500x500.jpg",
@@ -1793,6 +1825,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Jerk Chicken",
         description: "A spicy and flavorful Jamaican classic featuring marinated chicken grilled to perfection with a jerk seasoning blend.",
         image: "https://www.chilipeppermadness.com/wp-content/uploads/2023/06/Jamaican-Jerk-Chicken-Recipe-SQ-500x500.jpg",
@@ -1843,6 +1876,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Chicken Tagine",
         description: "A fragrant and tender Moroccan stew made with chicken, preserved lemons, olives, and a blend of exotic spices.",
         image: "https://diethood.com/wp-content/uploads/2022/10/chicken-tagine-7-500x500.jpg",
@@ -1902,6 +1936,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Doro Wat",
         description: "A rich and spicy Ethiopian chicken stew made with berbere spice blend, served with injera flatbread.",
         image: "https://www.aspicyperspective.com/wp-content/uploads/2021/03/ethiopian-doro-wat-recipe-10-500x500.jpg",
@@ -1956,6 +1991,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Chiles Rellenos",
         description: "A classic Mexican dish featuring roasted poblano peppers stuffed with cheese, then fried to a golden perfection.",
         image: "https://www.chilipeppermadness.com/wp-content/uploads/2020/10/Chile-Relleno-SQ-500x500.jpg",
@@ -2011,6 +2047,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Miso Soup",
         description: "A comforting and umami-rich Japanese soup made with miso paste, tofu, seaweed, and green onions.",
         image: "https://www.lowcarbingasian.com/wp-content/uploads/2019/06/Traditional-Japanese-Miso-Soup-LowCarbingAsian-Cover-500x500.jpg",
@@ -2064,6 +2101,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Butter Chicken (Murgh Makhani)",
         description: "A creamy and aromatic Indian curry made with tender chicken pieces simmered in a rich tomato and butter sauce.",
         image: "https://myfoodstory.com/wp-content/uploads/2020/04/restaurant-style-butter-chicken-masala-murgh-makhani-1-500x500.jpg",
@@ -2130,6 +2168,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Sweet and Sour Chicken",
         description: "A popular Chinese dish featuring crispy chicken pieces coated in a tangy sweet and sour sauce with colorful bell peppers and pineapple chunks.",
         image: "https://www.jocooks.com/wp-content/uploads/2014/03/sweet-and-sour-chicken-500x500.jpg",
@@ -2197,6 +2236,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Chicken Teriyaki",
         description: "A Japanese favorite featuring tender chicken pieces glazed with a sweet and savory teriyaki sauce, served with steamed rice and vegetables.",
         image: "https://simply-delicious-food.com/wp-content/uploads/2019/10/Teriyaki-chicken-3-500x500.jpg",
@@ -2255,6 +2295,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Jollof Rice",
         description: "A flavorful West African one-pot rice dish cooked with tomatoes, peppers, onions, and a blend of spices, often served with chicken or vegetables.",
         image: "https://eatwellabi.com/wp-content/uploads/2022/11/Jollof-rice-16-500x500.jpg",
@@ -2322,6 +2363,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Jamaican Saltfish and Ackee",
         description: "A flavorful Jamaican dish featuring salted codfish and ackee fruit sautéed with aromatic spices and vegetables.",
         image: "https://thatgirlcookshealthy.com/wp-content/uploads/2019/02/jamaican-ackee-and-saltfish-image-500x500.jpg",
@@ -2384,6 +2426,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Tacos",
         description: "Tacos are a quintessential Mexican street food. They consist of soft or hard tortillas filled with a variety of ingredients such as grilled meats (beef, chicken, or pork), salsa, guacamole, onions, cilantro, and more.",
         image: "https://tornadoughalli.com/wp-content/uploads/2019/05/INSTANT-POT-STREET-TACOS-500x500.jpg",
@@ -2428,6 +2471,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Moussaka",
         description: "Moussaka is a traditional Greek dish consisting of layers of eggplant, ground meat (usually beef or lamb), and a creamy béchamel sauce. It's often baked to perfection.",
         image: "https://www.recipetineats.com/wp-content/uploads/2019/03/Greek-Moussaka_3-re-edited-SQ.jpg?w=500&h=500&crop=1",
@@ -2492,6 +2536,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Peking Duck",
         description: "Peking Duck is a famous Chinese dish known for its crispy, aromatic duck skin and tender meat. It's typically served with thin pancakes, hoisin sauce, and thinly sliced scallions.",
         image: "https://www.kitchensanctuary.com/wp-content/uploads/2016/02/pulled-duck-square-500x500.jpg",
@@ -2544,6 +2589,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Mexican Street Corn (Elote)",
         description: "Grilled corn on the cob smothered in a creamy mixture of mayonnaise, cotija cheese, chili powder, and lime juice.",
         image: "https://princesspinkygirl.com/wp-content/uploads/2020/06/Mexican-Street-Corn-square-500x500.jpg",
@@ -2592,6 +2638,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Scottish Haggis",
         description: "Haggis is a traditional Scottish dish made from minced sheep's heart, liver, and lungs, mixed with oats, onions, and spices, encased in a sheep's stomach.",
         image: "https://www.carolinescooking.com/wp-content/uploads/2015/01/haggis-featured-pic-sq-500x500.jpg",
@@ -2654,6 +2701,7 @@ db.recipes.insertMany([
     {
       meal: {
         favourited: false,
+        in_shopping_bag: false,
         name: "Cullen Skink",
         description: "Cullen Skink is a traditional Scottish soup made with smoked haddock, potatoes, onions, and cream. It's a hearty and comforting dish.",
         image: "https://www.therealmealdeal.com/wp-content/uploads/2022/11/cullen-skink-recipe-with-leeks-1-500x500.jpg",
@@ -2712,6 +2760,7 @@ db.favourites.insertMany([
     {
         meal: {
           favourited: false,
+          in_shopping_bag: false,
           name: "Classic Spaghetti Bolognese",
           description: "A timeless Italian pasta dish with a rich and hearty meat sauce.",
           image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-best-spaghetti-bolognese-7e83155.jpg?resize=500,500",

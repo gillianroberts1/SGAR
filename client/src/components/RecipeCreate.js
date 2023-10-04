@@ -120,6 +120,8 @@ function RecipeCreate({ addRecipe }) {
           id="ingredients"
           name="ingredients"
           value={formData.meal.ingredients}
+          placeholder="eg: 1kg Mince, 2 large tomatoes, 20ml cream"
+
           required
         />
       </div>
@@ -225,13 +227,16 @@ function RecipeCreate({ addRecipe }) {
         />
       </div>
       <div className="formWrap">
-        <label> Cuisine - ie Chinese: </label>
+        <label> Cuisine: </label>
         <input
           onChange={onChange}
           type="text"
           id="country_of_origin"
           name="country_of_origin"
           value={formData.meal.country_of_origin}
+          placeholder="eg: Chinese, Italian"
+
+          
         />
       </div>
 

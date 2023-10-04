@@ -1,23 +1,47 @@
+.shopping-bag-container{
+  /* margin-top: 200px;
+  margin-left:200px;
+  margin-right:200px;
+  background: rgba(201, 207, 207, 1);
+  border: none;
+  border-radius: 10px;
+  padding: 25px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-decoration: none;
+  color: black; */
+  padding: 20px;
+  
+
+}
+
 .shopping-bag-card {
-  border: 1px solid #000;
-  padding: 10px;
-  margin: 10px;
-  background-color: #fff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  font-family: Arial, sans-serif;
-  max-width: 300px;
+  background: rgba(201, 207, 207, 1);
+  border: none;
+  border-radius: 10px;
+  padding: 25px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  text-decoration: none;
+  color: black;
+  width: 330px;
+  
+
 }
 
-.shopping-bag-container {
-  display: flex;
-  flex-direction: column;
+.all-shoplist-display { 
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 80px;
+  justify-content: center;
+  margin-top: 225px;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-li {
-  margin: 5px 0;
-}
+/* .all-shoplist-display{
+  margin-top:200px;
+} */

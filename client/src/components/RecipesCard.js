@@ -28,13 +28,13 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite, addToShoppingBag, re
   const handleButtonBagClick = () => {
     console.log("item in shopping bag", recipe);
     addToShoppingBag(recipe);
-    navigate("/shoppingbag");
+    navigate("/shoppinglist");
   };
 
   // shopping bag
   const handleRemoveBagClick = () => {
     removeFromShoppingBag(recipe);
-    navigate("/shoppingbag");
+    navigate("/shoppinglist");
   };
 
   if (!recipe) return <p>loading...</p>;

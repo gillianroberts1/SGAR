@@ -41,8 +41,8 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite, addToShoppingBag, re
 
   return (
     <>
-      <div className="recipe-card">
-        <div className="recipe-card-container">
+      <div className="one-recipe-card">
+        <div className="one-recipe-card-container">
           {recipe.meal.favourited ? (
             <button className="fav-button" onClick={handleRemoveClick}>
               Remove From Favourites
@@ -55,17 +55,17 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite, addToShoppingBag, re
           {/* add to shopping bag button */}
           {recipe.meal.in_shopping_bag ? (
             <button className="bag-button" onClick={handleRemoveBagClick}>
-              Remove From Shopping Bag
+              Remove From Shopping List
             </button>
           ) : (
             <button className="bag-button" onClick={handleButtonBagClick}>
-              Add to Shopping Bag
+              Add to Shopping List
             </button>
           )}
           {/*  */}
           <br></br>
           <img
-            className="recipe-card-image"
+            className="one-recipe-card-image"
             src={recipe.meal.image}
             alt={recipe.meal.name}
           />

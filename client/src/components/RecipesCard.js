@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getRecipe } from "../RecipeService";
 import "./RecipeCard.css";
 
-const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
+const RecipesCard = ({ addToFavourite, removeFromFavourite, addToShoppingBag, removeFromShoppingBag }) => {
   const [recipe, setRecipe] = useState(null);
   const { id } = useParams();
 
@@ -24,6 +24,19 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
     navigate("/favourites");
   };
 
+  // shopping bag
+  const handleButtonBagClick = () => {
+    console.log("item in shopping bag", recipe);
+    addToShoppingBag(recipe);
+    navigate("/shoppingbag");
+  };
+
+  // shopping bag
+  const handleRemoveBagClick = () => {
+    removeFromShoppingBag(recipe);
+    navigate("/shoppingbag");
+  };
+
   if (!recipe) return <p>loading...</p>;
 
   return (
@@ -39,6 +52,17 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
               Add to Favourites
             </button>
           )}
+          {/* add to shopping bag button */}
+          {recipe.meal.in_shopping_bag ? (
+            <button className="bag-button" onClick={handleRemoveBagClick}>
+              Remove From Shopping Bag
+            </button>
+          ) : (
+            <button className="bag-button" onClick={handleButtonBagClick}>
+              Add to Shopping Bag
+            </button>
+          )}
+          {/*  */}
           <br></br>
           <img
             className="recipe-card-image"
@@ -58,11 +82,7 @@ const RecipesCard = ({ addToFavourite, removeFromFavourite }) => {
           </p>
           <p>
             Vegan:{" "}
-            {recipe.meal.vegan ? (
-              <span>&#10003;</span>
-            ) : (
-              <span>&#10008;</span>
-            )}
+            {recipe.meal.vegan ? <span>&#10003;</span> : <span>&#10008;</span>}
           </p>
           <p>Preperation time: {recipe.meal.preparation_time} minutes</p>
           <p>Cooking time: {recipe.meal.cooking_time} minutes</p>

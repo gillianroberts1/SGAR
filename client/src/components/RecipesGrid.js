@@ -1,20 +1,19 @@
 import "./RecipesGrid.css";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 // make the description on grid not too long
 const description_length = 100;
 
-const RecipesGrid = ({ recipes, handleSearch }) => {
-
+const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
   // sorts into alphabetical order
   recipes.sort((a, b) => a.meal.name.localeCompare(b.meal.name));
 
   return (
+    <>
+      {showSearchBar && <SearchBar handleSearch={handleSearch} />}
     <div className="recipies-grid">
-      
-      <SearchBar handleSearch={handleSearch} />
       <div className="all-recipes-container">
         {recipes &&
           recipes.map((recipe) => (
@@ -42,10 +41,11 @@ const RecipesGrid = ({ recipes, handleSearch }) => {
               />
               <div></div>
               <p className="recipe-name">{recipe.meal.name}</p>
-              <p className="recipe-description"> 
-              {recipe.meal.description.length > description_length
+              <p className="recipe-description">
+                {recipe.meal.description.length > description_length
                   ? `${recipe.meal.description.slice(0, description_length)}...`
-                  : recipe.meal.description}</p>
+                  : recipe.meal.description}
+              </p>
               <p className="recipe-cooktime">
                 {recipe.meal.cooking_time + recipe.meal.preparation_time} mins
               </p>

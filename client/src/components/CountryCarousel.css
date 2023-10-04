@@ -36,7 +36,7 @@
 
 .carousel-container {
   width: 70%;
-  margin: 200px auto;
+  margin: 0 auto;
   z-index: -0;
 }
 .carousel-element {

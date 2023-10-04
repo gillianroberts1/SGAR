@@ -1,5 +1,5 @@
 .recipies-grid {
-  margin: 200px 80px;
+  margin: 0 80px;
 }
 
 .all-recipes-container {
@@ -51,15 +51,12 @@ p.recipe-name {
 .recipe-cooktime {
   font-size: 13px;
 }
-.recipe-vegetarian{
+.recipe-vegetarian {
   font-size: 13px;
-
 }
-.recipe-vegan{
+.recipe-vegan {
   font-size: 13px;
-
 }
-.recipe-country{
+.recipe-country {
   font-size: 13px;
-
 }

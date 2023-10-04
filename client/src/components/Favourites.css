@@ -1,5 +1,4 @@
 .favourites-grid {
-
 }
 
 .fav-recipe-container {
@@ -7,7 +6,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 80px;
   justify-content: center;
-  margin: 235px 80px;
+  margin: 0 80px;
 }
 
 @media (max-width: 767px) {
@@ -30,5 +29,3 @@
   text-decoration: none;
   color: black;
 }
-
-

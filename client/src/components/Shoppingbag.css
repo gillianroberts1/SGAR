@@ -1,0 +1,23 @@
+.shopping-bag-card {
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  max-width: 300px;
+}
+
+.shopping-bag-container {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 5px 0;
+}

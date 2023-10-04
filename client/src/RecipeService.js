@@ -26,6 +26,29 @@ export const updateRecipe = (recipe) => {
   }).then((res) => res.json());
 };
 
+export const updateShoppingBag = (recipe) => {
+  console.log("update recipe", recipe);
+  let updatedShopBag = { ...recipe };
+  delete updatedShopBag._id;
+
+  return fetch(baseURL + "/" + recipe._id, {
+    method: "PUT",
+    body: JSON.stringify(updatedShopBag),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Request failed with status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .catch((error) => {
+      console.error("Error updating shopping bag:", error);
+    });
+};
+
 // export const deleteFavourite = (id) => {
 //   return fetch(baseURL + id, {
 //       method: 'DELETE'

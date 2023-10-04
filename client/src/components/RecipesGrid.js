@@ -13,6 +13,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
   return (
     <>
       {showSearchBar && <SearchBar handleSearch={handleSearch} />}
+    <div className="recipies-grid">
       <div className="all-recipes-container">
         {recipes &&
           recipes.map((recipe) => (
@@ -21,7 +22,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
               className="recipe-card"
               key={recipe._id}
             >
-              <div>
+              <div className="fav-hearts">
                 {recipe.meal.favourited === true ? (
                   <span>
                     <FaHeart />
@@ -68,7 +69,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
             </Link>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 

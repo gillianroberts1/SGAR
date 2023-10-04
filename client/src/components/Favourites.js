@@ -1,7 +1,5 @@
 import React from "react";
-import FavRecipe from "./FavRecipe";
 import { Link } from "react-router-dom";
-import { updateRecipe } from "../RecipeService";
 
 const Favourites = ({ favourites }) => {
   //   const handleDelete = () => {

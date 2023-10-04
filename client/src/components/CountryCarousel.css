@@ -6,14 +6,13 @@
 .react-responsive-3d-carousel__carousel__list__item__content {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-img,
-svg {
+.country-image img {
   border: none;
   border-radius: 50%;
   height: 75%;
+  
 }
 
 .react-responsive-3d-carousel__carousel__list__item {
@@ -25,10 +24,30 @@ svg {
   font-size: 20px;
   color: white;
   font-weight: bold;
+  transform: translate(-50%, -50%);
+  top: 38%;
+  left: 50%;
+}
+
+.carousel-element p:hover {
+  color: #00cfc8;
+  
 }
 
 .carousel-container {
-    width:70%;
-    margin: 0 auto;
+  width: 70%;
+  margin: 500px auto;
+  z-index: -0;
+}
+.carousel-element {
+  position: relative;
 }
 
+body {
+  background: rgb(0, 177, 190);
+  background: radial-gradient(
+    circle,
+    rgba(0, 177, 190, 1) 0%,
+    rgba(42, 42, 42, 0.9934567577030813) 96%
+  );
+}

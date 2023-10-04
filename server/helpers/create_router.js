@@ -28,6 +28,22 @@ const createRouter = function (collection) {
       });
   });
 
+  router.get("/country/:country", (req, res) => {
+    const country = req.params.country;
+    console.log(country);
+    collection
+      .find({
+        "meal.country_of_origin": country,
+      })
+      .toArray()
+      .then((docs) => res.json(docs))
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
   router.delete("/:id", (req, res) => {
     const id = req.params.id;
     collection

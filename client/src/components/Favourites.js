@@ -1,7 +1,6 @@
 import React from "react";
-import FavRecipe from "./FavRecipe";
 import { Link } from "react-router-dom";
-import { updateRecipe } from "../RecipeService";
+import './Favourites.css'
 
 const Favourites = ({ favourites }) => {
   //   const handleDelete = () => {
@@ -12,7 +11,9 @@ const Favourites = ({ favourites }) => {
 
   const nodeElements = favourites.map((recipe) => {
     return (
+      <div className="favourites-grid">
       <Link to={`/${recipe._id}`} className="recipe-card" key={recipe._id}>
+        <div className="fav-recipe-card">
         <img
           className="small-img"
           src={recipe.meal.image}
@@ -24,7 +25,9 @@ const Favourites = ({ favourites }) => {
         <p className="recipe-cooktime">{recipe.meal.cooking_time} mins</p>
         <p className="recipe-country">{recipe.meal.country_of_origin}</p>
         {/* <button onClick={handleDelete}>🗑</button> */}
+        </div>
       </Link>
+      </div>
     );
   });
   //   for (let recipe of favourites) {
@@ -33,7 +36,7 @@ const Favourites = ({ favourites }) => {
   //     }
   //   }
 
-  return <div className="fav-recipe">{<ul>{nodeElements}</ul>}</div>;
+  return <div className="fav-recipe-container">{<ul>{nodeElements}</ul>}</div>;
 };
 
 export default Favourites;

@@ -160,6 +160,12 @@ function App() {
     setFilteredResults(results);
   };
 
+  const getRandomRecipes = () => {
+    const randomRecipes = recipes.slice()
+    randomRecipes.sort(() => Math.random() - 0.5);
+    return randomRecipes.slice(0, 4);
+  }
+
   return (
    
     <Router>
@@ -167,7 +173,7 @@ function App() {
 
       <div className="page-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home randomRecipes={getRandomRecipes()} />} />
           <Route path="/cuisine/:cuisine" element={<Cuisine/>}/>
           <Route
             path="/allrecipes"
@@ -177,6 +183,7 @@ function App() {
                 recipes={filteredResults.length ? filteredResults : recipes}
                 handleSearch={handleSearch}
                 updateRecipe={updateRecipe}
+                
               />
             }
           />

@@ -8,15 +8,16 @@ const description_length = 100;
 
 const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
   // sorts into alphabetical order
-  recipes.sort((a, b) => a.meal.name.localeCompare(b.meal.name));
+  const sortedRecipes = recipes.sort((a, b) => a.meal.name.localeCompare(b.meal.name));
 
   return (
-    <>
+  <>
+    
       {showSearchBar && <SearchBar handleSearch={handleSearch} />}
     <div className="recipies-grid">
       <div className="all-recipes-container">
-        {recipes &&
-          recipes.map((recipe) => (
+        {sortedRecipes &&
+          sortedRecipes.map((recipe) => (
             <Link
               to={`/${recipe._id}`}
               className="recipe-card"
@@ -70,6 +71,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
           ))}
       </div>
     </div>
+    </>
   );
 };
 

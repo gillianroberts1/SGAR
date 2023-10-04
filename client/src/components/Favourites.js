@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './Favourites.css'
 
 
-const description_length = 70;
+const description_length = 100;
 
 const Favourites = ({ favourites }) => {
   //   const handleDelete = () => {

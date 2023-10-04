@@ -1,0 +1,14 @@
+#recipe-form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.formWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nutrition {
+  display: flex;
+  flex-direction: column;
+}

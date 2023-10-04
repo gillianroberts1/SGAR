@@ -1,12 +1,26 @@
-.fav-grid {
-  margin: 150px;
+.favourites-grid {
+
+}
+
+.fav-recipe-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+  justify-content: center;
+  margin: 235px 80px;
+}
+
+@media (max-width: 767px) {
+  .all-recipes-container {
+    display: block;
+  }
 }
 
 .fav-recipe-card {
   background: rgba(201, 207, 207, 1);
   border: none;
   border-radius: 10px;
-  padding: 30px;
+  padding: 3px;
   font: inherit;
   cursor: pointer;
   outline: inherit;
@@ -17,8 +31,4 @@
   color: black;
 }
 
-.fav-recipe-card-container {
-  display: grid;
-  gap: 80px;
-  justify-content: center;
-}
+

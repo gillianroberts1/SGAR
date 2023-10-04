@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Favourites.css'
 
+
+const description_length = 70;
+
 const Favourites = ({ favourites }) => {
   //   const handleDelete = () => {
   //     updateRecipe(FavRecipe._id).then(() => {
@@ -21,8 +24,11 @@ const Favourites = ({ favourites }) => {
         />
         <div></div>
         <p className="recipe-name">{recipe.meal.name}</p>
-        <p className="recipe-description"> {recipe.meal.description}</p>
-        <p className="recipe-cooktime">{recipe.meal.cooking_time} mins</p>
+        <p className="recipe-description">
+                {recipe.meal.description.length > description_length
+                  ? `${recipe.meal.description.slice(0, description_length)}...`
+                  : recipe.meal.description}
+              </p>        <p className="recipe-cooktime">{recipe.meal.cooking_time} mins</p>
         <p className="recipe-country">{recipe.meal.country_of_origin}</p>
         {/* <button onClick={handleDelete}>🗑</button> */}
         </div>
@@ -36,7 +42,7 @@ const Favourites = ({ favourites }) => {
   //     }
   //   }
 
-  return <div className="fav-recipe-container">{<ul>{nodeElements}</ul>}</div>;
+  return <div className="fav-recipe-container">{nodeElements}</div>;
 };
 
 export default Favourites;

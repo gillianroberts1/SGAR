@@ -1,0 +1,19 @@
+.input-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+input {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding-left: 10px;
+  background-color: rgba(201, 207, 207, 1);
+}
+#search-icon {
+  margin: 10px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}

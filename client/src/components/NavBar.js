@@ -82,6 +82,17 @@ function NavBar({handleSearch}) {
             >
               Shopping Bag
             </Link>
+            <Link
+              to="/createrecipe"
+              className={
+                activeLink === "create recipe"
+                  ? "active navbar-link"
+                  : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("create recipe")}
+            >
+              Create Recipe
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

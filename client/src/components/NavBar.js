@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import SearchBar from "./SearchBar";
+// import recipe_logo3 from "../assets/images/recipe_logo3.png"
 
 function NavBar({handleSearch}) {
   const [activeLink, setActiveLink] = useState("/");
@@ -18,6 +18,9 @@ function NavBar({handleSearch}) {
         setScrolled(false);
       }
     };
+    
+    window.addEventListener("scroll", onScroll);
+
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -27,13 +30,16 @@ function NavBar({handleSearch}) {
   };
 
   return (
+    <>
+    
+    <div className="navbar-container">
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
-        <Navbar.Brand href="/">
+        {/* <Navbar.Brand href="/">
           <div className="logo-container">
-            <img src="#" alt="Logo" className="default" />
+            <img src={recipe_logo3} alt="Logo" className="default" />
           </div>
-        </Navbar.Brand>
+        </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
@@ -86,6 +92,8 @@ function NavBar({handleSearch}) {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
+    </>
   );
 }
 

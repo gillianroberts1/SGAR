@@ -12,7 +12,8 @@ const RecipesGrid = ({ recipes, handleSearch }) => {
   recipes.sort((a, b) => a.meal.name.localeCompare(b.meal.name));
 
   return (
-    <>
+    <div className="recipies-grid">
+      
       <SearchBar handleSearch={handleSearch} />
       <div className="all-recipes-container">
         {recipes &&
@@ -22,7 +23,7 @@ const RecipesGrid = ({ recipes, handleSearch }) => {
               className="recipe-card"
               key={recipe._id}
             >
-              <div>
+              <div className="fav-hearts">
                 {recipe.meal.favourited === true ? (
                   <span>
                     <FaHeart />
@@ -68,7 +69,7 @@ const RecipesGrid = ({ recipes, handleSearch }) => {
             </Link>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 

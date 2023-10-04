@@ -13,6 +13,7 @@ import { updateShoppingBag } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
 import Cuisine from "./components/Cuisine";
+import Header from "./components/Header";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -21,10 +22,6 @@ function App() {
 
 
   const [filteredResults, setFilteredResults] = useState([]);
-
-
-
-  
 
 
   useEffect(() => {
@@ -163,19 +160,10 @@ function App() {
     setFilteredResults(results);
   };
 
-  // const removeFromFavourites = (removed) => {
-  //   const updatedFaves = [];
-  //   for (let recipe of favouriteRecipes) {
-  //     if (recipe.meal.name !== removed.name) {
-  //       updatedFaves.push(recipe);
-  //     }
-  //   }
-  //   setFavouriteRecipes(updatedFaves);
-  // };
-
   return (
+   
     <Router>
-      <NavBar handleSearch={handleSearch} />
+      <Header handleSearch={handleSearch} />
 
       <div className="page-content">
         <Routes>
@@ -217,6 +205,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+
   );
 }
 

@@ -1,19 +1,22 @@
+.recipies-grid {
+  margin: 420px 80px;
+}
+
 .all-recipes-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 80px;
   justify-content: center;
-  margin-top: 10px;
 }
 
 @media (max-width: 767px) {
-  .all-recipes-container  {
+  .all-recipes-container {
     display: block;
   }
 }
 
 .recipe-card {
-  background-color: rgb(245, 245, 245);
+  background: rgba(201, 207, 207, 1);
   border: none;
   border-radius: 10px;
   padding: 25px;
@@ -34,8 +37,10 @@ p.recipe-name {
 
 .small-img {
   height: 200px;
+  border: none;
+  border-radius: 10px;
 }
 
-
-
-
+.fav-hearts {
+  margin-bottom: 20px;
+}

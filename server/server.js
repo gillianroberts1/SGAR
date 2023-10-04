@@ -15,10 +15,6 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
         const recipesCollection = db.collection('recipes');
         const recipesRouter = createRouter(recipesCollection);
         app.use('/api/recipes', recipesRouter);
-        const favouritesCollection = db.collection('favourites')
-        const favouritesRouter = createRouter(favouritesCollection)
-        app.use('/api/favourites', favouritesRouter);
-
     })
     .catch(console.err);
 

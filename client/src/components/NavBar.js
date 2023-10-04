@@ -78,15 +78,15 @@ function NavBar({handleSearch}) {
               Favourites
             </Link>
             <Link
-              to="/shoppingbag"
+              to="/shoppinglist"
               className={
-                activeLink === "shopping bag"
+                activeLink === "shopping list"
                   ? "active navbar-link"
                   : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("shopping bag")}
+              onClick={() => onUpdateActiveLink("shopping list")}
             >
-              Shopping Bag
+              Shopping List
             </Link>
           </Nav>
         </Navbar.Collapse>

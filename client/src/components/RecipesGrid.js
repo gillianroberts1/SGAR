@@ -70,6 +70,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
           ))}
       </div>
     </div>
+    </>
   );
 };
 

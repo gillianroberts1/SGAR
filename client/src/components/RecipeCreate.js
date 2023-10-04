@@ -114,7 +114,7 @@ function RecipeCreate({ addRecipe }) {
 
       <div className="formWrap">
         <label> Ingredients: </label>
-        <input
+        <textarea
           onChange={onChange}
           type=""
           id="ingredients"
@@ -124,7 +124,7 @@ function RecipeCreate({ addRecipe }) {
         />
       </div>
       <div className="formWrap">
-        <label> Nurtition: </label>
+        <label> Nutrition: </label>
         <div className="nutrition">
           <input
             onChange={onNutritionChange}
@@ -140,6 +140,8 @@ function RecipeCreate({ addRecipe }) {
             id="carbohydrates"
             name="carbohydrates"
             value={formData.meal.nutrition.carbohydrates}
+            placeholder="carbohydrates"
+
           />
           <input
             onChange={onNutritionChange}
@@ -147,6 +149,8 @@ function RecipeCreate({ addRecipe }) {
             id="fiber"
             name="fiber"
             value={formData.meal.nutrition.fiber}
+            placeholder="fibre"
+
           />
           <input
             onChange={onNutritionChange}
@@ -154,6 +158,8 @@ function RecipeCreate({ addRecipe }) {
             id="protein"
             name="protein"
             value={formData.meal.nutrition.protein}
+            placeholder="protein"
+
           />
           <input
             onChange={onNutritionChange}
@@ -161,6 +167,8 @@ function RecipeCreate({ addRecipe }) {
             id="sugar"
             name="sugar"
             value={formData.meal.nutrition.sugar}
+            placeholder="sugar"
+
           />
         </div>
       </div>

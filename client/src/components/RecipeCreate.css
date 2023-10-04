@@ -12,3 +12,21 @@
   display: flex;
   flex-direction: column;
 }
+
+textarea {
+  border-radius: 10px;
+  background-color: rgba(201, 207, 207, 1);
+  border: 1px solid black;
+}
+
+#save {
+  padding: 2px 20px;
+}
+
+h2 {
+  color: #00cfc8;
+}
+
+label {
+  color: #03fff6;
+}

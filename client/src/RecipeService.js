@@ -26,6 +26,18 @@ export const updateRecipe = (recipe) => {
   }).then((res) => res.json());
 };
 
+
+export const postRecipe = (payload) => {
+  return fetch(baseURL, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: { 'Content-Type' : 'application/json'}
+  })
+  .then((res) => {
+    return res.json()
+  })
+}
+
 export const updateShoppingBag = (recipe) => {
   console.log("update recipe", recipe);
   let updatedShopBag = { ...recipe };

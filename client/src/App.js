@@ -12,8 +12,10 @@ import { updateRecipe } from "./RecipeService";
 import { updateShoppingBag } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
+import RecipeCreate from "./components/RecipeCreate";
 import Cuisine from "./components/Cuisine";
 import Header from "./components/Header";
+
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -23,6 +25,10 @@ function App() {
 
   const [filteredResults, setFilteredResults] = useState([]);
 
+  const addRecipe = (submittedRecipe) => {
+    const updatedRecipe = [...recipes, submittedRecipe];
+    setRecipes(updatedRecipe);
+  };
 
   useEffect(() => {
     getRecipes().then((allRecipes) => {
@@ -43,7 +49,9 @@ function App() {
     const newFav = [];
     if (recipes.length > 0) {
       for (let recipe of recipes) {
-        if (recipe.meal.favourited === true) {
+        console.log("recipe", recipe);
+        console.log("meal", recipe.meal);
+        if (recipe.meal.favourited) {
           newFav.push(recipe);
         }
       }
@@ -179,7 +187,6 @@ function App() {
             path="/allrecipes"
             element={
               <RecipesGrid
-
                 recipes={filteredResults.length ? filteredResults : recipes}
                 handleSearch={handleSearch}
                 updateRecipe={updateRecipe}
@@ -207,7 +214,11 @@ function App() {
               />
             }
           />
+
           <Route path="/shoppinglist" element={<ShoppingBag shoppingBag={shoppingBag}/>} />
+          
+          <Route path="/createrecipe" element={<RecipeCreate addRecipe={(recipes) => addRecipe(recipes)}/>} />
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

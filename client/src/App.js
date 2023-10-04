@@ -200,7 +200,7 @@ function App() {
               />
             }
           />
-          <Route path="/shoppingbag" element={<ShoppingBag shoppingBag={shoppingBag}/>} />
+          <Route path="/shoppinglist" element={<ShoppingBag shoppingBag={shoppingBag}/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

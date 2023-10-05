@@ -3,7 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getRecipe } from "../RecipeService";
 import "./RecipeCard.css";
 
-const RecipesCard = ({ addToFavourite, removeFromFavourite, addToShoppingBag, removeFromShoppingBag }) => {
+const RecipesCard = ({
+  addToFavourite,
+  removeFromFavourite,
+  addToShoppingBag,
+  removeFromShoppingBag,
+}) => {
   const [recipe, setRecipe] = useState(null);
   const { id } = useParams();
 

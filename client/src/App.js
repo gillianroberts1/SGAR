@@ -1,5 +1,4 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Favourites from "./components/Favourites";
@@ -9,19 +8,16 @@ import Home from "./components/Home";
 import RecipesGrid from "./components/RecipesGrid";
 import { getRecipes } from "./RecipeService";
 import { updateRecipe } from "./RecipeService";
-import { updateShoppingBag } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
 import RecipeCreate from "./components/RecipeCreate";
 import Cuisine from "./components/Cuisine";
 import Header from "./components/Header";
 
-
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
   const [shoppingBag, setShoppingBag] = useState([]);
-
 
   const [filteredResults, setFilteredResults] = useState([]);
 
@@ -42,15 +38,12 @@ function App() {
 
   useEffect(() => {
     filterShoppingBag();
-  }, [recipes])
-
+  }, [recipes]);
 
   const filterFavourites = () => {
     const newFav = [];
     if (recipes.length > 0) {
       for (let recipe of recipes) {
-        console.log("recipe", recipe);
-        console.log("meal", recipe.meal);
         if (recipe.meal.favourited) {
           newFav.push(recipe);
         }
@@ -58,7 +51,6 @@ function App() {
     }
     setFavouriteRecipes(newFav);
   };
-
 
   const favouriteSelected = (itemToAdd) => {
     const isRecipeInFavorites = favouriteRecipes.some(
@@ -169,20 +161,22 @@ function App() {
   };
 
   const getRandomRecipes = () => {
-    const randomRecipes = recipes.slice()
+    const randomRecipes = recipes.slice();
     randomRecipes.sort(() => Math.random() - 0.5);
     return randomRecipes.slice(0, 4);
-  }
+  };
 
   return (
-   
     <Router>
       <Header handleSearch={handleSearch} />
 
       <div className="page-content">
         <Routes>
-          <Route path="/" element={<Home randomRecipes={getRandomRecipes()} />} />
-          <Route path="/cuisine/:cuisine" element={<Cuisine/>}/>
+          <Route
+            path="/"
+            element={<Home randomRecipes={getRandomRecipes()} />}
+          />
+          <Route path="/cuisine/:cuisine" element={<Cuisine />} />
           <Route
             path="/allrecipes"
             element={
@@ -190,7 +184,6 @@ function App() {
                 recipes={filteredResults.length ? filteredResults : recipes}
                 handleSearch={handleSearch}
                 updateRecipe={updateRecipe}
-                
               />
             }
           />
@@ -215,15 +208,22 @@ function App() {
             }
           />
 
-          <Route path="/shoppinglist" element={<ShoppingBag shoppingBag={shoppingBag}/>} />
-          
-          <Route path="/createrecipe" element={<RecipeCreate addRecipe={(recipes) => addRecipe(recipes)}/>} />
+          <Route
+            path="/shoppinglist"
+            element={<ShoppingBag shoppingBag={shoppingBag} />}
+          />
+
+          <Route
+            path="/createrecipe"
+            element={
+              <RecipeCreate addRecipe={(recipes) => addRecipe(recipes)} />
+            }
+          />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </Router>
-
   );
 }
 

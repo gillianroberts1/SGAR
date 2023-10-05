@@ -4,9 +4,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-// import recipe_logo3 from "../assets/images/recipe_logo3.png"
 
-function NavBar({handleSearch}) {
+function NavBar({ handleSearch }) {
   const [activeLink, setActiveLink] = useState("/");
   const [scrolled, setScrolled] = useState(false);
 
@@ -18,9 +17,8 @@ function NavBar({handleSearch}) {
         setScrolled(false);
       }
     };
-    
-    window.addEventListener("scroll", onScroll);
 
+    window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -31,79 +29,73 @@ function NavBar({handleSearch}) {
 
   return (
     <>
-    
-    <div className="navbar-container">
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
-      <Container>
-        {/* <Navbar.Brand href="/">
-          <div className="logo-container">
-            <img src={recipe_logo3} alt="Logo" className="default" />
-          </div>
-        </Navbar.Brand> */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
+      <div className="navbar-container">
+        <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+          <Container>
+            <Navbar.Toggle aria-controls="basic-navbar-nav">
+              <span className="navbar-toggler-icon"></span>
+            </Navbar.Toggle>
 
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Link
-              to="/"
-              className={
-                activeLink === "home" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("home")}
-            >
-              Home
-            </Link>
-            <Link
-              to="/allrecipes"
-              className={
-                activeLink === "all recipes"
-                  ? "active navbar-link"
-                  : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("all recipes")}
-            >
-              All Recipes
-            </Link>
-            <Link
-              to="/favourites"
-              className={
-                activeLink === "favourites"
-                  ? "active navbar-link"
-                  : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("favourites")}
-            >
-              Favourites
-            </Link>
-            <Link
-              to="/shoppinglist"
-              className={
-                activeLink === "shopping list"
-                  ? "active navbar-link"
-                  : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("shopping list")}
-            >
-              Shopping List
-            </Link>
-            <Link
-              to="/createrecipe"
-              className={
-                activeLink === "create recipe"
-                  ? "active navbar-link"
-                  : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("create recipe")}
-            >
-              Create Recipe
-            </Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    </div>
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Link
+                  to="/"
+                  className={
+                    activeLink === "home" ? "active navbar-link" : "navbar-link"
+                  }
+                  onClick={() => onUpdateActiveLink("home")}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/allrecipes"
+                  className={
+                    activeLink === "all recipes"
+                      ? "active navbar-link"
+                      : "navbar-link"
+                  }
+                  onClick={() => onUpdateActiveLink("all recipes")}
+                >
+                  All Recipes
+                </Link>
+                <Link
+                  to="/favourites"
+                  className={
+                    activeLink === "favourites"
+                      ? "active navbar-link"
+                      : "navbar-link"
+                  }
+                  onClick={() => onUpdateActiveLink("favourites")}
+                >
+                  Favourites
+                </Link>
+                <Link
+                  to="/shoppinglist"
+                  className={
+                    activeLink === "shopping list"
+                      ? "active navbar-link"
+                      : "navbar-link"
+                  }
+                  onClick={() => onUpdateActiveLink("shopping list")}
+                >
+                  Shopping List
+                </Link>
+                <Link
+                  to="/createrecipe"
+                  className={
+                    activeLink === "create recipe"
+                      ? "active navbar-link"
+                      : "navbar-link"
+                  }
+                  onClick={() => onUpdateActiveLink("create recipe")}
+                >
+                  Create Recipe
+                </Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </div>
     </>
   );
 }

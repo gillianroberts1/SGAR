@@ -10,17 +10,10 @@ html {
 }
 
 .page-content {
-  padding-top:110px;
+  padding-top: 310px;
+  padding-bottom: 40px;
 }
 
 body {
-  background-color: #00CFC8;
-}
-
-
-@media (min-width: 1700px) {
-  main .container {
-    max-width: 100%;
-    padding: 0 150px;
-  }
+  background-color: #00cfc8;
 }

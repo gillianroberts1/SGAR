@@ -12,7 +12,6 @@ const Cuisine = () => {
   }, []);
   return (
     <>
-      
       <RecipesGrid recipes={recipes} showSearchBar={false} />
     </>
   );

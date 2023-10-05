@@ -70,20 +70,20 @@ const CountryCarousel = ({ onImageClick }) => {
   ];
   return (
     <div className="carousel-container">
-    <Carousel autoPlay={false} showIndicators={false} showStatus={false}>
-      {recipes.map(({ country, image, cuisine }) => (
-        <div
-          className="carousel-element"
-          onClick={() => navigate(`/cuisine/${country}`)}
-          key={country}
-        >
-          <div className="country-image">
-          <p>{cuisine}</p>
-          <img src={image} alt={country} />
+      <Carousel autoPlay={false} showIndicators={false} showStatus={false}>
+        {recipes.map(({ country, image, cuisine }) => (
+          <div
+            className="carousel-element"
+            onClick={() => navigate(`/cuisine/${country}`)}
+            key={country}
+          >
+            <div className="country-image">
+              <p>{cuisine}</p>
+              <img src={image} alt={country} />
+            </div>
           </div>
-        </div>
-      ))}
-    </Carousel>
+        ))}
+      </Carousel>
     </div>
   );
 };

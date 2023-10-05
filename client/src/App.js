@@ -1,5 +1,4 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Favourites from "./components/Favourites";
@@ -9,7 +8,6 @@ import Home from "./components/Home";
 import RecipesGrid from "./components/RecipesGrid";
 import { getRecipes } from "./RecipeService";
 import { updateRecipe } from "./RecipeService";
-import { updateShoppingBag } from "./RecipeService";
 import { useState, useEffect } from "react";
 import RecipesCard from "./components/RecipesCard";
 import RecipeCreate from "./components/RecipeCreate";
@@ -46,8 +44,6 @@ function App() {
     const newFav = [];
     if (recipes.length > 0) {
       for (let recipe of recipes) {
-        // console.log("recipe", recipe);
-        // console.log("meal", recipe.meal);
         if (recipe.meal.favourited) {
           newFav.push(recipe);
         }

@@ -121,7 +121,6 @@ function RecipeCreate({ addRecipe }) {
           name="ingredients"
           value={formData.meal.ingredients}
           placeholder="eg: 1kg Mince, 2 large tomatoes, 20ml cream"
-
           required
         />
       </div>
@@ -143,7 +142,6 @@ function RecipeCreate({ addRecipe }) {
             name="carbohydrates"
             value={formData.meal.nutrition.carbohydrates}
             placeholder="carbohydrates"
-
           />
           <input
             onChange={onNutritionChange}
@@ -152,7 +150,6 @@ function RecipeCreate({ addRecipe }) {
             name="fiber"
             value={formData.meal.nutrition.fiber}
             placeholder="fibre"
-
           />
           <input
             onChange={onNutritionChange}
@@ -161,7 +158,6 @@ function RecipeCreate({ addRecipe }) {
             name="protein"
             value={formData.meal.nutrition.protein}
             placeholder="protein"
-
           />
           <input
             onChange={onNutritionChange}
@@ -170,7 +166,6 @@ function RecipeCreate({ addRecipe }) {
             name="sugar"
             value={formData.meal.nutrition.sugar}
             placeholder="sugar"
-
           />
         </div>
       </div>
@@ -235,8 +230,6 @@ function RecipeCreate({ addRecipe }) {
           name="country_of_origin"
           value={formData.meal.country_of_origin}
           placeholder="eg: Chinese, Italian"
-
-          
         />
       </div>
 

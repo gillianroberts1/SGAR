@@ -12,8 +12,8 @@
 @media (max-width: 767px) {
   .all-recipes-container {
     display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
   }
 }
 
@@ -51,19 +51,15 @@ p.recipe-name {
 .recipe-description {
   font-size: 13px;
 }
-.recipe-cooktime  {
+.recipe-cooktime {
   padding-left: 2px;
-
 }
 
 .recipe-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-size: 12px;
-  
-
 }
 .recipe-details p {
   margin-bottom: 0 0;
-
-} 
+}

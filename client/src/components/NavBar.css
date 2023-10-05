@@ -22,13 +22,9 @@ a.navbar-link {
   opacity: 0.75;
 }
 
-  a.navbar-link:hover {
-    color: #03fff6;
-  }
-
-
-
-
+a.navbar-link:hover {
+  color: #03fff6;
+}
 
 .navbar-nav {
   display: flex;

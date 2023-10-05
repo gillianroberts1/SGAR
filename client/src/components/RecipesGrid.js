@@ -54,30 +54,30 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
                     : recipe.meal.description}
                 </p>
                 <div className="recipe-details">
-                
-                <p className="recipe-vegan">
-                  Vegan:{" "}
-                  {recipe.meal.vegan ? (
-                    <span>&#10003;</span>
-                  ) : (
-                    <span>&#10008;</span>
-                  )}
-                </p>
-                <p className="recipe-vegetarian">
-                  Vegetarian:{" "}
-                  {recipe.meal.vegetarian ? (
-                    <span>&#10003;</span>
-                  ) : (
-                    <span>&#10008;</span>
-                  )}
-                </p>
-                
-                <p className="recipe-country">
-                  {recipe.meal.country_of_origin}
-                </p>
-                <p className="recipe-cooktime">
-                  {recipe.meal.cooking_time + recipe.meal.preparation_time} mins
-                </p>
+                  <p className="recipe-vegan">
+                    Vegan:{" "}
+                    {recipe.meal.vegan ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&#10008;</span>
+                    )}
+                  </p>
+                  <p className="recipe-vegetarian">
+                    Vegetarian:{" "}
+                    {recipe.meal.vegetarian ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&#10008;</span>
+                    )}
+                  </p>
+
+                  <p className="recipe-country">
+                    {recipe.meal.country_of_origin}
+                  </p>
+                  <p className="recipe-cooktime">
+                    {recipe.meal.cooking_time + recipe.meal.preparation_time}{" "}
+                    mins
+                  </p>
                 </div>
               </Link>
             ))}

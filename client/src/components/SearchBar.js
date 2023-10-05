@@ -1,8 +1,8 @@
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
-import "./SearchBar.css"
+import "./SearchBar.css";
 
-const SearchBar = ({handleSearch}) => {
+const SearchBar = ({ handleSearch }) => {
   const [input, setInput] = useState("");
 
   const handleChange = (input) => {
@@ -12,10 +12,10 @@ const SearchBar = ({handleSearch}) => {
 
   return (
     <div className="input-wrapper">
-        <FaSearch id="search-icon" />
+      <FaSearch id="search-icon" />
 
       <input
-      type="text"
+        type="text"
         placeholder="Search..."
         value={input}
         onChange={(event) => handleChange(event.target.value)}

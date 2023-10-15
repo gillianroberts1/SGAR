@@ -1,0 +1,30 @@
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 80px;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .shop-card {
+    display: block;
+    padding: 12px;
+  }
+}
+
+.shop-card {
+  background: rgba(201, 207, 207, 1);
+  border: none;
+  border-radius: 10px;
+  padding: px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  text-decoration: none;
+  color: black;
+}

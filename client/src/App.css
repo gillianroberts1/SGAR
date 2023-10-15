@@ -1,12 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.App {
+  text-align: center;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 75px;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .page-content {

@@ -119,9 +119,9 @@ const RecipesCard = ({
             ))}
           </p>
         </div>
-      </div>
-    </>
-  );
+        </div>
+        </>
+     );
 };
-
+ 
 export default RecipesCard;

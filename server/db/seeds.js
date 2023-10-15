@@ -64,8 +64,11 @@ db.recipes.insertMany([
 
       {
         meal: {
+<<<<<<< HEAD
           favourited: true,
           in_shopping_bag: false,
+=======
+>>>>>>> main
           name: "Vegetable Stir-Fry",
           description: "A quick and healthy stir-fry packed with colorful vegetables and tofu.",
           image: "https://www.wholesomeyum.com/wp-content/uploads/2020/11/wholesomeyum-how-to-stir-fry-vegetables-vegetable-stir-fry-recipe-list-15-500x500.jpg",
@@ -121,6 +124,7 @@ db.recipes.insertMany([
         }
       },
 
+<<<<<<< HEAD
       {
         meal: {
           favourited: false,
@@ -2820,6 +2824,8 @@ db.favourites.insertMany([
 
       
       
+=======
+>>>>>>> main
 
       
 

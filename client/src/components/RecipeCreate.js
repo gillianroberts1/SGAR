@@ -76,6 +76,8 @@ function RecipeCreate({ addRecipe }) {
         ...formData.meal,
         ingredients: trimmedIngredients,
         method: trimmedMethod,
+        vegan: formData.meal.vegan === "true" ? true : false,
+        vegetarian: formData.meal.vegetarian === "true" ? true : false,
       },
     };
 

@@ -18,7 +18,7 @@
       "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
     },
     {
-      "source": "/vercel_app_domain_name/(.*)",
+      "source": "/sgar-api.vercel.app//(.*)",
       "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
     }
   ]

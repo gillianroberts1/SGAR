@@ -8,7 +8,8 @@ app.use(express.json());
 const MongoClient = require("mongodb").MongoClient;
 const createRouter = require("./helpers/create_router.js");
 
-MongoClient.connect(  "mongodb+srv://gillianroberts:nqshhUiLnRkhZTNh@cluster0.7ctdfyx.mongodb.net/",
+MongoClient.connect(
+  process.env.MONGODB_URI,
 
   { useUnifiedTopology: true }
 )

@@ -56,4 +56,8 @@ body {
     grid-template-columns: repeat(1, 1fr);
     gap: 40px;
   }
+  .react-responsive-3d-carousel__arrows svg {
+    width: 2rem;
+    margin: -11px;
+  }
 }

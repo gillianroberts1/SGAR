@@ -61,6 +61,21 @@
   .one-recipe-card-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 40px;
   }
+  .one-recipe-card {
+    margin: unset;
+  }
+  .fav-button{
+    margin-left:24%;
+  }
+  .bag-button {
+    margin-left:24%;
+
+
+  }
+  .page-content {
+    padding-top: 255px;
+  
+  
+}
 }

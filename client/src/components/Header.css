@@ -19,4 +19,10 @@
   .header-image {
     width: 100%;
   }
+  .cuisine {
+    margin-left: 9%;
+  }
+  p.suggestion {
+  margin-left: 6%;
+}
 }

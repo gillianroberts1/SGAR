@@ -86,6 +86,11 @@ console.log("server update", updatedData);
             res.status(500);
             res.json({ status: 500, error: err });
           });
+
+          // Add a ping route to prevent cold starts
+  router.get('/ping', (req, res) => {
+    res.status(200).send('Server is awake');
+  });
       });
 
 

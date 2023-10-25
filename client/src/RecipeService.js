@@ -1,4 +1,4 @@
-const baseURL = "https://sgar-api.vercel.app";
+const baseURL = "https://sgar-api.vercel.app/api/recipes";
 
 export const getRecipes = () => {
   return fetch(baseURL).then((res) => res.json());

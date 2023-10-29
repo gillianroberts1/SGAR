@@ -10,12 +10,18 @@
   justify-content: center;
   background-color: #2a2a2a;
   padding-bottom: 5px;
-  position: fixed;
   width: 100%;
   z-index: 10;
 }
 
+.header__scrolled {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .header {
+    z-index: unset;
+  }
   .header-image {
     width: 100%;
   }
@@ -23,6 +29,10 @@
     margin-left: 9%;
   }
   p.suggestion {
-  margin-left: 6%;
-}
+    margin-left: 6%;
+  }
+
+  .header .navbar-collapse.show {
+    margin-bottom: 30px;
+  }
 }

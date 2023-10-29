@@ -2,6 +2,8 @@ nav.navbar {
   top: 0;
   z-index: 1;
   transition: 0.32s ease-in-out;
+  background-color: #2a2a2a;
+  padding-bottom: 10px;
 }
 
 nav.navbar.scrolled {
@@ -80,4 +82,38 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
+}
+
+.navbar-container__scrolled {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-container__scrolled .container {
+  padding: 20px 0;
+}
+
+.navbar-collapse {
+  justify-content: center;
+  flex-grow: unset;
+  flex-basis: unset;
+}
+
+.me-auto {
+  margin-right: 0 !important;
+}
+
+.navbar>.container {
+  justify-content: center;
+  background-color: #2a2a2a;
+
+}
+
+@media (max-width: 767px) {
+  .navbar>.container{
+    display: flow;
+  }
+  
+  
 }

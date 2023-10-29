@@ -65,17 +65,10 @@
   .one-recipe-card {
     margin: unset;
   }
-  .fav-button{
-    margin-left:24%;
+  .fav-button {
+    margin-left: 24%;
   }
   .bag-button {
-    margin-left:24%;
-
-
+    margin-left: 24%;
   }
-  .page-content {
-    padding-top: 255px;
-  
-  
-}
 }

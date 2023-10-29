@@ -29,7 +29,9 @@ function NavBar({ handleSearch }) {
 
   return (
     <>
-      <div className="navbar-container">
+      <div
+        className={scrolled ? "navbar-container__scrolled" : "navbar-container"}
+      >
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav">

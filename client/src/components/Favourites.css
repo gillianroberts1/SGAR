@@ -11,9 +11,6 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  .page-content {
-    padding-top: 400px;
-}
 }
 
 .fav-recipe-card {
@@ -29,5 +26,5 @@
   justify-items: center;
   text-decoration: none;
   color: black;
-  height:440px;
+  height: 440px;
 }

@@ -91,6 +91,7 @@ function RecipeCreate({ addRecipe }) {
   };
 
   return (
+    <div className="form-container">
     <form onSubmit={onSubmit} id="recipe-form">
       <h2> Add a Recipe</h2>
       <div className="formWrap">
@@ -237,6 +238,7 @@ function RecipeCreate({ addRecipe }) {
 
       <input type="submit" value="save" id="save" />
     </form>
+    </div>
   );
 }
 

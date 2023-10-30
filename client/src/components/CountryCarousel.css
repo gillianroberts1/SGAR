@@ -6,6 +6,7 @@
 .react-responsive-3d-carousel__carousel__list__item__content {
   display: flex;
   justify-content: center;
+  z-index: -5;
 }
 
 .country-image img {
@@ -35,7 +36,8 @@
 .carousel-container {
   width: 70%;
   margin: 0 auto;
-  z-index: -0;
+  z-index: -1;
+  position: relative;
 }
 .carousel-element {
   position: relative;
@@ -61,13 +63,5 @@ body {
   
   }
   
-  /* .all-recipes-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 40px;
-  } */
-  /* .react-responsive-3d-carousel__arrows svg {
-    width: 2rem;
-    margin: -11px;
-  } */
+  
 }

@@ -113,6 +113,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 @media (max-width: 767px) {
   .navbar>.container{
     display: flow;
+    position: relative;
   }
   
   

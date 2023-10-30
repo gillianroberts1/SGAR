@@ -55,8 +55,12 @@ label {
   #recipe-form {
     display: contents;
     margin: unset;
+    height: 1000px;
   }
   .page-content{
     padding: 30px;
+  }
+  .form-container {
+    height: 1000px;
   }
 }

@@ -19,3 +19,11 @@ textarea:focus,
 select:focus {
   outline: none;
 }
+
+@media (max-width: 767px){
+  .input-wrapper{
+    position: fixed;
+    margin-right: 50%;
+  
+  }
+}

@@ -1,12 +1,17 @@
 .react-responsive-3d-carousel__indicators__item svg {
   width: 3rem !important;
   height: 3rem !important;
+  
+
 }
 
 .react-responsive-3d-carousel__carousel__list__item__content {
   display: flex;
   justify-content: center;
-  z-index: -5;
+  z-index: -1;
+  padding: 30px;
+  /* position: relative; */
+
 }
 
 .country-image img {
@@ -14,6 +19,8 @@
   border-radius: 50%;
   height: 75%;
 }
+
+
 
 .react-responsive-3d-carousel__carousel__list__item {
   box-shadow: none !important;
@@ -36,7 +43,6 @@
 .carousel-container {
   width: 70%;
   margin: 0 auto;
-  z-index: -1;
   position: relative;
 }
 .carousel-element {
@@ -55,13 +61,18 @@ body {
 @media (max-width: 767px) {
   .react-responsive-3d-carousel__arrows svg {
     width: 5rem;
-    height: 4.2rem;
+    padding: 20px 0;
+    
   }
-
-  .react-responsive-3d-carousel__carousel__list__item__content  {
-    padding: 30px;
+  .country-image {
+    height: 100%;
+    padding: 20px ;
+    
+    
+  }
   
-  }
+
+  
   
   
 }

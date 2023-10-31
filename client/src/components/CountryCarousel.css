@@ -1,3 +1,10 @@
+.react-responsive-3d-carousel__carousel{
+  padding:0%
+}
+
+
+
+
 .react-responsive-3d-carousel__indicators__item svg {
   width: 3rem !important;
   height: 3rem !important;
@@ -66,9 +73,12 @@ body {
   }
   .country-image {
     height: 100%;
-    padding: 20px ;
+    padding: 10px ;
     
     
+  }
+  .carousel-element p{
+    font-size: 15px;
   }
   
 

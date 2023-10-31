@@ -87,7 +87,7 @@ function NavBar({ handleSearch }) {
                   className={
                     activeLink === "create recipe"
                       ? "active navbar-link"
-                      : "navbar-link"
+                      : "navbar-link create_recipe_link"
                   }
                   onClick={() => onUpdateActiveLink("create recipe")}
                 >

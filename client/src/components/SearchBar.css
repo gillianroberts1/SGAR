@@ -22,8 +22,11 @@ select:focus {
 
 @media (max-width: 767px){
   .input-wrapper{
-    position: fixed;
-    margin-right: 50%;
-  
+    /* position: fixed; */
+    padding-top: 50px;
+    display: flex;
+    justify-items: center;
+    
+    
   }
 }

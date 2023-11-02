@@ -20,7 +20,6 @@ const Header = (handleSearch) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  console.log(scrolled);
   return (
     <>
       <div className={scrolled ? "header__scrolled" : "header"}>

@@ -20,6 +20,7 @@ function App() {
   const [shoppingBag, setShoppingBag] = useState([]);
 
   const [filteredResults, setFilteredResults] = useState([]);
+  const [showGetRecipesBtn, setShowGetRecipesBtn] = useState(false);
 
   const addRecipe = (submittedRecipe) => {
     const updatedRecipe = [...recipes, submittedRecipe];
@@ -27,18 +28,22 @@ function App() {
   };
 
   useEffect(() => {
-    getRecipes().then((allRecipes) => {
-      setRecipes(allRecipes);
-    });
+    getRecipes()
+      .then((allRecipes) => {
+        setRecipes(allRecipes);
+      })
+      .catch(() => {
+        setShowGetRecipesBtn(true);
+      });
   }, []);
 
   useEffect(() => {
     filterFavourites();
-  }, [recipes]);
+  }, []);
 
   useEffect(() => {
     filterShoppingBag();
-  }, [recipes]);
+  }, []);
 
   const filterFavourites = () => {
     const newFav = [];
@@ -222,6 +227,14 @@ function App() {
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        {showGetRecipesBtn && (
+          <button
+            className="refresh load"
+            onClick={() => window.location.reload()}
+          >
+            Load Recipes
+          </button>
+        )}
       </div>
     </Router>
   );

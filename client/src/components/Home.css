@@ -13,56 +13,50 @@
   font-size: 28px;
   font-weight: 600;
   font-style: italic;
-
 }
-
 
 .refresh {
   margin: 0px 0px 22px 86px;
   border: none;
   border-radius: 10px;
   background: #009c97;
-  color: #283D3E;
+  color: #283d3e;
   font-style: italic;
   font-weight: 700;
-  
-  
-
 }
 .more {
-  
   height: 35px;
   font-size: 19px;
 }
 
 .load {
-  
   height: 100px;
   width: auto;
   font-size: 30px;
 }
 
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .more {
     margin: 0px 0px 22px 45px;
-    width: 246px;
+    width: 242px;
     height: auto;
-
-    
+    font-size: 16px;
   }
 
-  .load{
+  .load {
     position: absolute;
     top: 275px;
-    left: 0px;
+    left: 50%;
     height: 70px;
     font-size: 20px;
+    margin: 0;
+    transform: translateX(-50%);
   }
 
-  .cuisine{
+  .cuisine {
     font-size: 20px;
   }
-  .suggestion{
+  .suggestion {
     font-size: 20px;
   }
 }

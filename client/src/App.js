@@ -39,11 +39,11 @@ function App() {
 
   useEffect(() => {
     filterFavourites();
-  }, []);
+  }, [recipes]);
 
   useEffect(() => {
     filterShoppingBag();
-  }, []);
+  }, [recipes]);
 
   const filterFavourites = () => {
     const newFav = [];

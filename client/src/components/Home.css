@@ -32,7 +32,9 @@
 .load {
   height: 100px;
   width: auto;
-  font-size: 30px;
+  font-size: 20px;
+  top: 300px;
+  position: absolute;
 }
 
 @media (max-width: 767px) {
@@ -45,7 +47,7 @@
 
   .load {
     position: absolute;
-    top: 275px;
+    top: 285px;
     left: 50%;
     height: 70px;
     font-size: 20px;

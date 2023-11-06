@@ -232,6 +232,8 @@ function App() {
             className="refresh load"
             onClick={() => window.location.reload()}
           >
+            Network Error 
+            <br></br>
             Load Recipes
           </button>
         )}

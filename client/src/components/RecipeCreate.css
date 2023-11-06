@@ -1,6 +1,9 @@
 #recipe-form {
   margin: 0 auto;
   width: 50%;
+  height: 1500px;
+  scroll-behavior: smooth;
+
 }
 
 .formWrap {

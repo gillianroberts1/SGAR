@@ -16,6 +16,9 @@
 
 .header__scrolled {
   display: none;
+  scroll-behavior: smooth;
+  transition: .32s ease-in-out;
+
 }
 
 @media (max-width: 768px) {

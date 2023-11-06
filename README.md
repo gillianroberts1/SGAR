@@ -26,13 +26,19 @@ A team consisting of 4 developers have been assigned to the project.
 * Link ingredients to an online grocery app
 * Update favourites, with rating system after cooking. 
 
-### SET UP
+
+#### TO PLAY APP
+
+1. The full app has been deployed and can be viewed here https://sgar.vercel.app/
+
+### SET UP TO RUN LOCALLY
 
 1. Clone repo from git hub
-2. Open up 3 terminals, client & server   and SGAR
+2. Open up 2 terminals, client & server 
 3. Client > npm install   (to install node modules)
-4. Server > npm run seeds (to install data from mongoDB)
-5. SGAR > npm start  ( to start app running on localhost:3000)
+4. Server > npm install   (to install node modules)
+5. Server > this has been separately deployed to fly.io, no need to run
+5. Client > npm start  ( to start app running on localhost:3000)
 
 
 #### LEARNINGS

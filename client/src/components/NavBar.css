@@ -1,6 +1,6 @@
 nav.navbar {
   top: 0;
-  z-index: 1;
+  z-index: 9999 !important;
   transition: 0.32s ease-in-out;
   background-color: #2a2a2a;
   padding-bottom: 10px;
@@ -104,23 +104,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-right: 0 !important;
 }
 
-.navbar>.container {
+.navbar > .container {
   justify-content: center;
   background-color: #2a2a2a;
-
 }
 
 @media (max-width: 767px) {
-  .navbar>.container{
+  .navbar > .container {
     display: flow;
     position: relative;
   }
-  .create_recipe_link{
+  .create_recipe_link {
     display: none;
-
   }
-
-  
-  
 }
-

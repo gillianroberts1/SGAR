@@ -9,7 +9,7 @@ const MongoClient = require("mongodb").MongoClient;
 const createRouter = require("./helpers/create_router.js");
 
 MongoClient.connect(
-  process.env.MONGODB_URI,
+  process.env.MONGODB_URL,
 
   { useUnifiedTopology: true }
 )
@@ -24,6 +24,9 @@ MongoClient.connect(
   })
   .catch(console.err);
 
-app.listen(9000, function () {
-  console.log(`Listening on port ${this.address().port}`);
+const hostname = "0.0.0.0";
+const port = process.env.port || 3000;
+
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });

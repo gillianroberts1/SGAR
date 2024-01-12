@@ -3,7 +3,6 @@ nav.navbar {
   z-index: 9999 !important;
   transition: 0.32s ease-in-out;
   background-color: #2a2a2a;
-  padding-bottom: 10px;
 }
 
 nav.navbar.scrolled {
@@ -88,6 +87,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .navbar-container__scrolled .container {

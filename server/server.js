@@ -6,6 +6,8 @@ app.use(cors());
 app.use(express.json());
 
 const MongoClient = require("mongodb").MongoClient;
+const uri = process.env.MONGO_URI;
+
 const createRouter = require("./helpers/create_router.js");
 
 MongoClient.connect(

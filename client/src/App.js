@@ -1,18 +1,21 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Favourites from "./components/Favourites";
-import ShoppingBag from "./components/ShoppingBag";
 import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import RecipesGrid from "./components/RecipesGrid";
 import { getRecipes } from "./RecipeService";
 import { updateRecipe } from "./RecipeService";
-import { useState, useEffect } from "react";
-import RecipesCard from "./components/RecipesCard";
-import RecipeCreate from "./components/RecipeCreate";
+import { useState, useEffect, lazy, Suspense } from "react";
 import Cuisine from "./components/Cuisine";
 import Header from "./components/Header";
+
+
+const Favourites = lazy(() => import("./components/Favourites"))
+const ShoppingBag = lazy(() => import("./components/ShoppingBag"))
+const RecipesCard = lazy(() => import("./components/RecipesCard"))
+const RecipeCreate = lazy(() => import("./components/RecipeCreate"))
+
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -172,9 +175,15 @@ function App() {
   };
 
   return (
+    <Suspense
+            fallback={
+              <div className="loading-pane">
+                <h2 className="loader">🍽️</h2>
+              </div>
+            }
+          >
     <Router>
       <Header handleSearch={handleSearch} />
-
       <div className="page-content">
         <Routes>
           <Route
@@ -203,6 +212,7 @@ function App() {
               />
             }
           />
+          
           <Route
             path="/favourites"
             element={
@@ -224,21 +234,21 @@ function App() {
               <RecipeCreate addRecipe={(recipes) => addRecipe(recipes)} />
             }
           />
-
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         {showGetRecipesBtn && (
           <button
-            className="refresh load"
+            className="loader"
             onClick={() => window.location.reload()}
           >
-            Network Error 
+            🍽️
             <br></br>
             Load Recipes
           </button>
         )}
       </div>
     </Router>
+    </Suspense>
   );
 }
 

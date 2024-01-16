@@ -1,6 +1,8 @@
 .header-image {
   padding: 15px 0;
   width: 300px;
+  /* padding: 15px 0;
+  width: 300px; */
 }
 
 .header {
@@ -27,6 +29,8 @@
   }
   .header-image {
     width: 100%;
+    padding-bottom: 35px;
+
   }
   .cuisine {
     margin-left: 9%;

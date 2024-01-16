@@ -238,7 +238,7 @@ function App() {
         </Routes>
         {showGetRecipesBtn && (
           <button
-            className="loader"
+            className="refresh load"
             onClick={() => window.location.reload()}
           >
             🍽️

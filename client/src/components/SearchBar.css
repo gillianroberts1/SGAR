@@ -20,17 +20,13 @@ select:focus {
   outline: none;
 }
 
-@media (max-width: 768px){
-  .input-wrapper{
+@media (max-width: 768px) {
+  .input-wrapper {
     display: flex;
     justify-items: center;
     position: absolute;
     top: 160px;
     right: 0;
     height: fit-content;
-    
-    
   }
-  
-
 }

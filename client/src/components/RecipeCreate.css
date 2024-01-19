@@ -3,7 +3,6 @@
   width: 50%;
   height: 1500px;
   scroll-behavior: smooth;
-
 }
 
 .formWrap {
@@ -60,7 +59,7 @@ label {
     margin: unset;
     height: 1000px;
   }
-  .page-content{
+  .page-content {
     padding: 30px;
   }
   .form-container {

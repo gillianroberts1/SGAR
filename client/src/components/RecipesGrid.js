@@ -10,7 +10,7 @@ const description_length = 100;
 const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
   // sorts into alphabetical order
   const sortedRecipes = recipes.sort((a, b) =>
-    a.meal.name.localeCompare(b.meal.name)
+    a.meal.name.localeCompare(b.meal.name),
   );
 
   return (
@@ -49,7 +49,7 @@ const RecipesGrid = ({ recipes, handleSearch, showSearchBar = true }) => {
                   {recipe.meal.description.length > description_length
                     ? `${recipe.meal.description.slice(
                         0,
-                        description_length
+                        description_length,
                       )}...`
                     : recipe.meal.description}
                 </p>

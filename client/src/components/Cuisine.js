@@ -9,12 +9,13 @@ const Cuisine = () => {
 
   useEffect(() => {
     getRecipesForCountry(params.cuisine).then((res) => setRecipes(res));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
       <RecipesGrid recipes={recipes} showSearchBar={false} />
     </>
   );
-};
+}
 
 export default Cuisine;

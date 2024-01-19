@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getRecipe } from "../RecipeService";
 import "./RecipeCard.css";
+import { Slide, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS
 
 const RecipesCard = ({
   addToFavourite,
@@ -18,10 +20,17 @@ const RecipesCard = ({
     getRecipe(id).then((resp) => setRecipe(resp));
   }, [id]);
 
+
   const handleButtonClick = () => {
     console.log("item in recipeCard", recipe);
     addToFavourite(recipe);
-    navigate("/favourites");
+
+    // navigate("/favourites");
+    toast.success("Added to Favourites", {
+      position: 'top-left',
+      theme: 'dark',
+      transition: Slide,
+    });
   };
 
   const handleRemoveClick = () => {
@@ -107,7 +116,7 @@ const RecipesCard = ({
                 <li className="ingredients" key={name}>
                   {ingredients}
                 </li>
-              )
+              ),
             )}
           </p>
           <p>
@@ -119,9 +128,9 @@ const RecipesCard = ({
             ))}
           </p>
         </div>
-        </div>
-        </>
-     );
+      </div>
+    </>
+  );
 };
- 
+
 export default RecipesCard;

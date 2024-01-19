@@ -92,152 +92,152 @@ function RecipeCreate({ addRecipe }) {
 
   return (
     <div className="form-container">
-    <form onSubmit={onSubmit} id="recipe-form">
-      <h2> Add a Recipe</h2>
-      <div className="formWrap">
-        <label> Meal name: </label>
-        <input
-          onChange={onChange}
-          type="text"
-          id="name"
-          name="name"
-          value={formData.meal.name}
-        />
-      </div>
-      <div className="formWrap">
-        <label> Description: </label>
-        <input
-          onChange={onChange}
-          type="text"
-          id="description"
-          name="description"
-          value={formData.meal.description}
-        />
-      </div>
-
-      <div className="formWrap">
-        <label> Ingredients: </label>
-        <textarea
-          onChange={onChange}
-          type=""
-          id="ingredients"
-          name="ingredients"
-          value={formData.meal.ingredients}
-          placeholder="eg: 1kg Mince, 2 large tomatoes, 20ml cream"
-          required
-        />
-      </div>
-      <div className="formWrap">
-        <label> Nutrition: </label>
-        <div className="nutrition">
+      <form onSubmit={onSubmit} id="recipe-form">
+        <h2> Add a Recipe</h2>
+        <div className="formWrap">
+          <label> Meal name: </label>
           <input
-            onChange={onNutritionChange}
+            onChange={onChange}
             type="text"
-            id="calories"
-            name="calories"
-            value={formData.meal.nutrition.calories}
-            placeholder="calories"
-          />
-          <input
-            onChange={onNutritionChange}
-            type="text"
-            id="carbohydrates"
-            name="carbohydrates"
-            value={formData.meal.nutrition.carbohydrates}
-            placeholder="carbohydrates"
-          />
-          <input
-            onChange={onNutritionChange}
-            type="text"
-            id="fiber"
-            name="fiber"
-            value={formData.meal.nutrition.fiber}
-            placeholder="fibre"
-          />
-          <input
-            onChange={onNutritionChange}
-            type="text"
-            id="protein"
-            name="protein"
-            value={formData.meal.nutrition.protein}
-            placeholder="protein"
-          />
-          <input
-            onChange={onNutritionChange}
-            type="text"
-            id="sugar"
-            name="sugar"
-            value={formData.meal.nutrition.sugar}
-            placeholder="sugar"
+            id="name"
+            name="name"
+            value={formData.meal.name}
           />
         </div>
-      </div>
-      <div className="formWrap">
-        <label> Preparation time(mins): </label>
-        <input
-          onChange={onChange}
-          type="text"
-          id="preparation_time"
-          name="preparation_time"
-          value={formData.meal.preparation_time}
-        />
-      </div>
-      <div className="formWrap">
-        <label> Time to cook(mins): </label>
-        <input
-          onChange={onChange}
-          type="text"
-          id="cooking_time"
-          name="cooking_time"
-          value={formData.meal.cooking_time}
-        />
-      </div>
-      <div className="formWrap">
-        <label> Method: </label>
-        <textarea
-          onChange={onChange}
-          type="text"
-          id="method"
-          name="method"
-          value={formData.meal.method}
-          placeholder="eg: boil water, peel potatoes"
-          required
-        />
-      </div>
-      <div className="formWrap">
-        <label> Vegan - true/false: </label>
-        <input
-          onChange={onChange}
-          type="text"
-          id="vegan"
-          name="vegan"
-          value={formData.meal.vegan}
-        />
-      </div>
-      <div className="formWrap">
-        <label> Vegetarian - true/false: </label>
-        <input
-          onChange={onChange}
-          type="text"
-          id="vegetrian"
-          name="vegetarian"
-          value={formData.meal.vegetarian}
-        />
-      </div>
-      <div className="formWrap">
-        <label> Cuisine: </label>
-        <input
-          onChange={onChange}
-          type="text"
-          id="country_of_origin"
-          name="country_of_origin"
-          value={formData.meal.country_of_origin}
-          placeholder="eg: Chinese, Italian"
-        />
-      </div>
+        <div className="formWrap">
+          <label> Description: </label>
+          <input
+            onChange={onChange}
+            type="text"
+            id="description"
+            name="description"
+            value={formData.meal.description}
+          />
+        </div>
 
-      <input type="submit" value="save" id="save" />
-    </form>
+        <div className="formWrap">
+          <label> Ingredients: </label>
+          <textarea
+            onChange={onChange}
+            type=""
+            id="ingredients"
+            name="ingredients"
+            value={formData.meal.ingredients}
+            placeholder="eg: 1kg Mince, 2 large tomatoes, 20ml cream"
+            required
+          />
+        </div>
+        <div className="formWrap">
+          <label> Nutrition: </label>
+          <div className="nutrition">
+            <input
+              onChange={onNutritionChange}
+              type="text"
+              id="calories"
+              name="calories"
+              value={formData.meal.nutrition.calories}
+              placeholder="calories"
+            />
+            <input
+              onChange={onNutritionChange}
+              type="text"
+              id="carbohydrates"
+              name="carbohydrates"
+              value={formData.meal.nutrition.carbohydrates}
+              placeholder="carbohydrates"
+            />
+            <input
+              onChange={onNutritionChange}
+              type="text"
+              id="fiber"
+              name="fiber"
+              value={formData.meal.nutrition.fiber}
+              placeholder="fibre"
+            />
+            <input
+              onChange={onNutritionChange}
+              type="text"
+              id="protein"
+              name="protein"
+              value={formData.meal.nutrition.protein}
+              placeholder="protein"
+            />
+            <input
+              onChange={onNutritionChange}
+              type="text"
+              id="sugar"
+              name="sugar"
+              value={formData.meal.nutrition.sugar}
+              placeholder="sugar"
+            />
+          </div>
+        </div>
+        <div className="formWrap">
+          <label> Preparation time(mins): </label>
+          <input
+            onChange={onChange}
+            type="text"
+            id="preparation_time"
+            name="preparation_time"
+            value={formData.meal.preparation_time}
+          />
+        </div>
+        <div className="formWrap">
+          <label> Time to cook(mins): </label>
+          <input
+            onChange={onChange}
+            type="text"
+            id="cooking_time"
+            name="cooking_time"
+            value={formData.meal.cooking_time}
+          />
+        </div>
+        <div className="formWrap">
+          <label> Method: </label>
+          <textarea
+            onChange={onChange}
+            type="text"
+            id="method"
+            name="method"
+            value={formData.meal.method}
+            placeholder="eg: boil water, peel potatoes"
+            required
+          />
+        </div>
+        <div className="formWrap">
+          <label> Vegan - true/false: </label>
+          <input
+            onChange={onChange}
+            type="text"
+            id="vegan"
+            name="vegan"
+            value={formData.meal.vegan}
+          />
+        </div>
+        <div className="formWrap">
+          <label> Vegetarian - true/false: </label>
+          <input
+            onChange={onChange}
+            type="text"
+            id="vegetrian"
+            name="vegetarian"
+            value={formData.meal.vegetarian}
+          />
+        </div>
+        <div className="formWrap">
+          <label> Cuisine: </label>
+          <input
+            onChange={onChange}
+            type="text"
+            id="country_of_origin"
+            name="country_of_origin"
+            value={formData.meal.country_of_origin}
+            placeholder="eg: Chinese, Italian"
+          />
+        </div>
+
+        <input type="submit" value="save" id="save" />
+      </form>
     </div>
   );
 }

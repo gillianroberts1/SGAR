@@ -62,14 +62,12 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
-    
   }
   .one-recipe-card {
     margin: unset;
   }
-  
-  .one-recipe-card-image{
-    height:250px;
 
+  .one-recipe-card-image {
+    height: 250px;
   }
 }

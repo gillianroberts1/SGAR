@@ -9,13 +9,13 @@ import { updateRecipe } from "./RecipeService";
 import { useState, useEffect, lazy, Suspense } from "react";
 import Cuisine from "./components/Cuisine";
 import Header from "./components/Header";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-
-const Favourites = lazy(() => import("./components/Favourites"))
-const ShoppingBag = lazy(() => import("./components/ShoppingBag"))
-const RecipesCard = lazy(() => import("./components/RecipesCard"))
-const RecipeCreate = lazy(() => import("./components/RecipeCreate"))
-
+const Favourites = lazy(() => import("./components/Favourites"));
+const ShoppingBag = lazy(() => import("./components/ShoppingBag"));
+const RecipesCard = lazy(() => import("./components/RecipesCard"));
+const RecipeCreate = lazy(() => import("./components/RecipeCreate"));
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -42,11 +42,15 @@ function App() {
 
   useEffect(() => {
     filterFavourites();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recipes]);
 
   useEffect(() => {
     filterShoppingBag();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recipes]);
+
+  console.log(window.location.href)
 
   const filterFavourites = () => {
     const newFav = [];
@@ -62,7 +66,7 @@ function App() {
 
   const favouriteSelected = (itemToAdd) => {
     const isRecipeInFavorites = favouriteRecipes.some(
-      (favRecipe) => favRecipe.meal.name === itemToAdd.meal.name
+      (favRecipe) => favRecipe.meal.name === itemToAdd.meal.name,
     );
     console.log("itemToAdd in favourite function", itemToAdd);
     if (!isRecipeInFavorites) {
@@ -84,7 +88,7 @@ function App() {
 
   const favouriteRemoved = (itemToRemove) => {
     const isRecipeInFavorites = favouriteRecipes.some(
-      (favRecipe) => favRecipe.meal.name === itemToRemove.meal.name
+      (favRecipe) => favRecipe.meal.name === itemToRemove.meal.name,
     );
     if (isRecipeInFavorites) {
       console.log("item to add", itemToRemove);
@@ -115,7 +119,7 @@ function App() {
 
   const bagSelected = (ingToAdd) => {
     const isRecipeInBag = shoppingBag.some(
-      (shopBagRecipe) => shopBagRecipe.meal.name === ingToAdd.meal.name
+      (shopBagRecipe) => shopBagRecipe.meal.name === ingToAdd.meal.name,
     );
     console.log("ingToAdd in favourite function", ingToAdd);
     if (!isRecipeInBag) {
@@ -137,7 +141,7 @@ function App() {
 
   const bagRemoved = (ingToRemove) => {
     const isRecipeInBag = shoppingBag.some(
-      (shopBagRecipe) => shopBagRecipe.meal.name === ingToRemove.meal.name
+      (shopBagRecipe) => shopBagRecipe.meal.name === ingToRemove.meal.name,
     );
     if (isRecipeInBag) {
       console.log("ing to add", ingToRemove);
@@ -176,78 +180,79 @@ function App() {
 
   return (
     <Suspense
-            fallback={
-              <div className="loading-pane">
-                <h2 className="loader">🍽️</h2>
-              </div>
-            }
-          >
-    <Router>
-      <Header handleSearch={handleSearch} />
-      <div className="page-content">
-        <Routes>
-          <Route
-            path="/"
-            element={<Home randomRecipes={getRandomRecipes()} />}
-          />
-          <Route path="/cuisine/:cuisine" element={<Cuisine />} />
-          <Route
-            path="/allrecipes"
-            element={
-              <RecipesGrid
-                recipes={filteredResults.length ? filteredResults : recipes}
-                handleSearch={handleSearch}
-                updateRecipe={updateRecipe}
-              />
-            }
-          />
-          <Route
-            path="/:id"
-            element={
-              <RecipesCard
-                addToFavourite={favouriteSelected}
-                removeFromFavourite={favouriteRemoved}
-                addToShoppingBag={bagSelected}
-                removeFromShoppingBag={bagRemoved}
-              />
-            }
-          />
-          
-          <Route
-            path="/favourites"
-            element={
-              <Favourites
-                favourites={favouriteRecipes}
-                // favouriteRemoved={favouriteRemoved}
-              />
-            }
-          />
+      fallback={
+        <div className="loading-pane">
+          <h2 className="loader">🍽️</h2>
+        </div>
+      }
+    >
+      <Router>
+        <Header handleSearch={handleSearch} />
+        <div className="page-content">
+          <Routes>
+            <Route
+              path="/"
+              element={<Home randomRecipes={getRandomRecipes()} />}
+            />
+            <Route path="/cuisine/:cuisine" element={<Cuisine />} />
+            <Route
+              path="/allrecipes"
+              element={
+                <RecipesGrid
+                  recipes={filteredResults.length ? filteredResults : recipes}
+                  handleSearch={handleSearch}
+                  updateRecipe={updateRecipe}
+                />
+              }
+            />
+            <Route
+              path="/:id"
+              element={
+                <RecipesCard
+                  addToFavourite={favouriteSelected}
+                  removeFromFavourite={favouriteRemoved}
+                  addToShoppingBag={bagSelected}
+                  removeFromShoppingBag={bagRemoved}
+                />
+              }
+            />
 
-          <Route
-            path="/shoppinglist"
-            element={<ShoppingBag shoppingBag={shoppingBag} />}
-          />
+            <Route
+              path="/favourites"
+              element={
+                <Favourites
+                  favourites={favouriteRecipes}
+                  // favouriteRemoved={favouriteRemoved}
+                />
+              }
+            />
 
-          <Route
-            path="/createrecipe"
-            element={
-              <RecipeCreate addRecipe={(recipes) => addRecipe(recipes)} />
-            }
-          />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-        {showGetRecipesBtn && (
-          <button
-            className="refresh load"
-            onClick={() => window.location.reload()}
-          >
-            🍽️
-            <br></br>
-            Load Recipes
-          </button>
-        )}
-      </div>
-    </Router>
+            <Route
+              path="/shoppinglist"
+              element={<ShoppingBag shoppingBag={shoppingBag} />}
+            />
+
+            <Route
+              path="/createrecipe"
+              element={
+                <RecipeCreate addRecipe={(recipes) => addRecipe(recipes)} />
+              }
+            />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+          {showGetRecipesBtn && (
+            <button
+              className="refresh load"
+              onClick={() => window.location.reload()}
+            >
+              🍽️
+              <br></br>
+              Load Recipes
+            </button>
+          )}
+          <ToastContainer />
+        </div>
+      </Router>
     </Suspense>
   );
 }

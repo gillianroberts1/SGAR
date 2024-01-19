@@ -1,32 +1,32 @@
 .input-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
 }
 
 input {
-  border-radius: 10px;
-  border: 1px solid black;
-  padding-left: 10px;
-  background-color: rgba(201, 207, 207, 1);
+    border-radius: 10px;
+    border: 1px solid black;
+    padding-left: 10px;
+    background-color: rgba(201, 207, 207, 1);
 }
 #search-icon {
-  margin: 10px;
+    margin: 10px;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  outline: none;
+    outline: none;
 }
 
 @media (max-width: 768px) {
-  .input-wrapper {
-    display: flex;
-    justify-items: center;
-    position: absolute;
-    top: 160px;
-    right: 0;
-    height: fit-content;
-  }
+    .input-wrapper {
+        display: flex;
+        justify-items: center;
+        position: absolute;
+        top: 160px;
+        right: 0;
+        height: fit-content;
+    }
 }

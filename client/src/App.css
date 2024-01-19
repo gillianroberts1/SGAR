@@ -1,35 +1,35 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .page-content {
-  padding-bottom: 40px;
-  padding-top: 40px;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 body {
-  background-color: #00cfc8;
+    background-color: #00cfc8;
 }
 
 .loading-pane {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  padding: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 15px;
 }
 
 .loader {
-  font-size: 100px;
-  animation: spin 1s linear infinite;
+    font-size: 100px;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }

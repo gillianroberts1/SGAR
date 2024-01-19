@@ -1,67 +1,67 @@
 .recipies-grid {
-  margin: 0 80px;
+    margin: 0 80px;
 }
 
 .all-recipes-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 80px;
-  justify-content: center;
-  /* padding-top: 100px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+    justify-content: center;
+    /* padding-top: 100px; */
 }
 
 @media (max-width: 767px) {
-  .all-recipes-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 40px;
-    /* padding-top: 100px; */
-  }
+    .all-recipes-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+        /* padding-top: 100px; */
+    }
 }
 
 .recipe-card {
-  background: rgba(201, 207, 207, 1);
-  border: none;
-  border-radius: 10px;
-  padding: 10px 18px;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  text-decoration: none;
-  color: black;
+    background: rgba(201, 207, 207, 1);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    text-decoration: none;
+    color: black;
 }
 
 p.recipe-name {
-  text-transform: uppercase;
-  padding-top: 20px;
-  text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+    text-align: center;
 }
 
 .small-img {
-  height: 200px;
-  border: none;
-  border-radius: 10px;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
 }
 
 .fav-hearts {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .recipe-description {
-  font-size: 13px;
+    font-size: 13px;
 }
 .recipe-cooktime {
-  padding-left: 2px;
+    padding-left: 2px;
 }
 
 .recipe-details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 12px;
 }
 .recipe-details p {
-  margin-bottom: 0 0;
+    margin-bottom: 0 0;
 }

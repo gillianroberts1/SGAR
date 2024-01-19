@@ -1,260 +1,268 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage";
-import Home from "./components/Home";
-import RecipesGrid from "./components/RecipesGrid";
-import { getRecipes } from "./RecipeService";
-import { updateRecipe } from "./RecipeService";
-import { useState, useEffect, lazy, Suspense } from "react";
-import Cuisine from "./components/Cuisine";
-import Header from "./components/Header";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ErrorPage from './components/ErrorPage'
+import Home from './components/Home'
+import RecipesGrid from './components/RecipesGrid'
+import { getRecipes } from './RecipeService'
+import { updateRecipe } from './RecipeService'
+import { useState, useEffect, lazy, Suspense } from 'react'
+import Cuisine from './components/Cuisine'
+import Header from './components/Header'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-const Favourites = lazy(() => import("./components/Favourites"));
-const ShoppingBag = lazy(() => import("./components/ShoppingBag"));
-const RecipesCard = lazy(() => import("./components/RecipesCard"));
-const RecipeCreate = lazy(() => import("./components/RecipeCreate"));
+const Favourites = lazy(() => import('./components/Favourites'))
+const ShoppingBag = lazy(() => import('./components/ShoppingBag'))
+const RecipesCard = lazy(() => import('./components/RecipesCard'))
+const RecipeCreate = lazy(() => import('./components/RecipeCreate'))
 
 function App() {
-  const [recipes, setRecipes] = useState([]);
-  const [favouriteRecipes, setFavouriteRecipes] = useState([]);
-  const [shoppingBag, setShoppingBag] = useState([]);
+    const [recipes, setRecipes] = useState([])
+    const [favouriteRecipes, setFavouriteRecipes] = useState([])
+    const [shoppingBag, setShoppingBag] = useState([])
 
-  const [filteredResults, setFilteredResults] = useState([]);
-  const [showGetRecipesBtn, setShowGetRecipesBtn] = useState(false);
+    const [filteredResults, setFilteredResults] = useState([])
+    const [showGetRecipesBtn, setShowGetRecipesBtn] = useState(false)
 
-  const addRecipe = (submittedRecipe) => {
-    const updatedRecipe = [...recipes, submittedRecipe];
-    setRecipes(updatedRecipe);
-  };
-
-  useEffect(() => {
-    getRecipes()
-      .then((allRecipes) => {
-        setRecipes(allRecipes);
-      })
-      .catch(() => {
-        setShowGetRecipesBtn(true);
-      });
-  }, []);
-
-  useEffect(() => {
-    filterFavourites();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [recipes]);
-
-  useEffect(() => {
-    filterShoppingBag();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [recipes]);
-
-  console.log(window.location.href)
-
-  const filterFavourites = () => {
-    const newFav = [];
-    if (recipes.length > 0) {
-      for (let recipe of recipes) {
-        if (recipe.meal.favourited) {
-          newFav.push(recipe);
-        }
-      }
+    const addRecipe = (submittedRecipe) => {
+        const updatedRecipe = [...recipes, submittedRecipe]
+        setRecipes(updatedRecipe)
     }
-    setFavouriteRecipes(newFav);
-  };
 
-  const favouriteSelected = (itemToAdd) => {
-    const isRecipeInFavorites = favouriteRecipes.some(
-      (favRecipe) => favRecipe.meal.name === itemToAdd.meal.name,
-    );
-    console.log("itemToAdd in favourite function", itemToAdd);
-    if (!isRecipeInFavorites) {
-      itemToAdd.meal.favourited = true;
-      updateRecipe(itemToAdd);
-      let recipesCopy = [...recipes];
-      for (let rec of recipesCopy) {
-        console.log("rec.meal.id", rec.id);
-        console.log("itemToAdd.meal.id", itemToAdd.id);
+    useEffect(() => {
+        getRecipes()
+            .then((allRecipes) => {
+                setRecipes(allRecipes)
+            })
+            .catch(() => {
+                setShowGetRecipesBtn(true)
+            })
+    }, [])
 
-        if (rec._id === itemToAdd._id) {
-          rec.meal.favourited = true;
+    useEffect(() => {
+        filterFavourites()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [recipes])
+
+    useEffect(() => {
+        filterShoppingBag()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [recipes])
+
+    console.log(window.location.href)
+
+    const filterFavourites = () => {
+        const newFav = []
+        if (recipes.length > 0) {
+            for (let recipe of recipes) {
+                if (recipe.meal.favourited) {
+                    newFav.push(recipe)
+                }
+            }
         }
-      }
-      setRecipes(recipesCopy);
-      filterFavourites();
+        setFavouriteRecipes(newFav)
     }
-  };
 
-  const favouriteRemoved = (itemToRemove) => {
-    const isRecipeInFavorites = favouriteRecipes.some(
-      (favRecipe) => favRecipe.meal.name === itemToRemove.meal.name,
-    );
-    if (isRecipeInFavorites) {
-      console.log("item to add", itemToRemove);
-      itemToRemove.meal.favourited = false;
-      updateRecipe(itemToRemove);
-      let recipesCopy = [...recipes];
-      for (let rec of recipesCopy) {
-        if (rec._id === itemToRemove._id) {
-          rec.meal.favourited = false;
+    const favouriteSelected = (itemToAdd) => {
+        const isRecipeInFavorites = favouriteRecipes.some(
+            (favRecipe) => favRecipe.meal.name === itemToAdd.meal.name
+        )
+        console.log('itemToAdd in favourite function', itemToAdd)
+        if (!isRecipeInFavorites) {
+            itemToAdd.meal.favourited = true
+            updateRecipe(itemToAdd)
+            let recipesCopy = [...recipes]
+            for (let rec of recipesCopy) {
+                console.log('rec.meal.id', rec.id)
+                console.log('itemToAdd.meal.id', itemToAdd.id)
+
+                if (rec._id === itemToAdd._id) {
+                    rec.meal.favourited = true
+                }
+            }
+            setRecipes(recipesCopy)
+            filterFavourites()
         }
-      }
-      setRecipes(recipesCopy);
-      filterFavourites();
     }
-  };
 
-  const filterShoppingBag = () => {
-    const newBag = [];
-    if (recipes.length > 0) {
-      for (let recipe of recipes) {
-        if (recipe.meal.in_shopping_bag === true) {
-          newBag.push(recipe);
+    const favouriteRemoved = (itemToRemove) => {
+        const isRecipeInFavorites = favouriteRecipes.some(
+            (favRecipe) => favRecipe.meal.name === itemToRemove.meal.name
+        )
+        if (isRecipeInFavorites) {
+            console.log('item to add', itemToRemove)
+            itemToRemove.meal.favourited = false
+            updateRecipe(itemToRemove)
+            let recipesCopy = [...recipes]
+            for (let rec of recipesCopy) {
+                if (rec._id === itemToRemove._id) {
+                    rec.meal.favourited = false
+                }
+            }
+            setRecipes(recipesCopy)
+            filterFavourites()
         }
-      }
     }
-    setShoppingBag(newBag);
-  };
 
-  const bagSelected = (ingToAdd) => {
-    const isRecipeInBag = shoppingBag.some(
-      (shopBagRecipe) => shopBagRecipe.meal.name === ingToAdd.meal.name,
-    );
-    console.log("ingToAdd in favourite function", ingToAdd);
-    if (!isRecipeInBag) {
-      ingToAdd.meal.in_shopping_bag = true;
-      updateRecipe(ingToAdd);
-      let bagCopy = [...recipes];
-      for (let bag of bagCopy) {
-        console.log("rec.meal.id", bag.id);
-        console.log("itemToAdd.meal.id", ingToAdd.id);
-
-        if (bag._id === ingToAdd._id) {
-          bag.meal.in_shopping_bag = true;
+    const filterShoppingBag = () => {
+        const newBag = []
+        if (recipes.length > 0) {
+            for (let recipe of recipes) {
+                if (recipe.meal.in_shopping_bag === true) {
+                    newBag.push(recipe)
+                }
+            }
         }
-      }
-      setRecipes(bagCopy);
-      filterShoppingBag();
+        setShoppingBag(newBag)
     }
-  };
 
-  const bagRemoved = (ingToRemove) => {
-    const isRecipeInBag = shoppingBag.some(
-      (shopBagRecipe) => shopBagRecipe.meal.name === ingToRemove.meal.name,
-    );
-    if (isRecipeInBag) {
-      console.log("ing to add", ingToRemove);
-      ingToRemove.meal.in_shopping_bag = false;
-      updateRecipe(ingToRemove);
-      let bagCopy = [...recipes];
-      for (let bag of bagCopy) {
-        if (bag._id === ingToRemove._id) {
-          bag.meal.in_shopping_bag = false;
+    const bagSelected = (ingToAdd) => {
+        const isRecipeInBag = shoppingBag.some(
+            (shopBagRecipe) => shopBagRecipe.meal.name === ingToAdd.meal.name
+        )
+        console.log('ingToAdd in favourite function', ingToAdd)
+        if (!isRecipeInBag) {
+            ingToAdd.meal.in_shopping_bag = true
+            updateRecipe(ingToAdd)
+            let bagCopy = [...recipes]
+            for (let bag of bagCopy) {
+                console.log('rec.meal.id', bag.id)
+                console.log('itemToAdd.meal.id', ingToAdd.id)
+
+                if (bag._id === ingToAdd._id) {
+                    bag.meal.in_shopping_bag = true
+                }
+            }
+            setRecipes(bagCopy)
+            filterShoppingBag()
         }
-      }
-      setRecipes(bagCopy);
-      filterShoppingBag();
     }
-  };
 
-  const handleSearch = (input) => {
-    const results = recipes.filter((recipe) => {
-      const lowerInput = input.toLowerCase();
+    const bagRemoved = (ingToRemove) => {
+        const isRecipeInBag = shoppingBag.some(
+            (shopBagRecipe) => shopBagRecipe.meal.name === ingToRemove.meal.name
+        )
+        if (isRecipeInBag) {
+            console.log('ing to add', ingToRemove)
+            ingToRemove.meal.in_shopping_bag = false
+            updateRecipe(ingToRemove)
+            let bagCopy = [...recipes]
+            for (let bag of bagCopy) {
+                if (bag._id === ingToRemove._id) {
+                    bag.meal.in_shopping_bag = false
+                }
+            }
+            setRecipes(bagCopy)
+            filterShoppingBag()
+        }
+    }
 
-      return (
-        recipe.meal.name.toLowerCase().includes(lowerInput) ||
-        recipe.meal.description.toLowerCase().includes(lowerInput) ||
-        recipe.meal.country_of_origin.toLowerCase().includes(lowerInput)
-      );
-    });
+    const handleSearch = (input) => {
+        const results = recipes.filter((recipe) => {
+            const lowerInput = input.toLowerCase()
 
-    setFilteredResults(results);
-  };
+            return (
+                recipe.meal.name.toLowerCase().includes(lowerInput) ||
+                recipe.meal.description.toLowerCase().includes(lowerInput) ||
+                recipe.meal.country_of_origin.toLowerCase().includes(lowerInput)
+            )
+        })
 
-  const getRandomRecipes = () => {
-    const randomRecipes = recipes.slice();
-    randomRecipes.sort(() => Math.random() - 0.5);
-    return randomRecipes.slice(0, 4);
-  };
+        setFilteredResults(results)
+    }
 
-  return (
-    <Suspense
-      fallback={
-        <div className="loading-pane">
-          <h2 className="loader">🍽️</h2>
-        </div>
-      }
-    >
-      <Router>
-        <Header handleSearch={handleSearch} />
-        <div className="page-content">
-          <Routes>
-            <Route
-              path="/"
-              element={<Home randomRecipes={getRandomRecipes()} />}
-            />
-            <Route path="/cuisine/:cuisine" element={<Cuisine />} />
-            <Route
-              path="/allrecipes"
-              element={
-                <RecipesGrid
-                  recipes={filteredResults.length ? filteredResults : recipes}
-                  handleSearch={handleSearch}
-                  updateRecipe={updateRecipe}
-                />
-              }
-            />
-            <Route
-              path="/:id"
-              element={
-                <RecipesCard
-                  addToFavourite={favouriteSelected}
-                  removeFromFavourite={favouriteRemoved}
-                  addToShoppingBag={bagSelected}
-                  removeFromShoppingBag={bagRemoved}
-                />
-              }
-            />
+    const getRandomRecipes = () => {
+        const randomRecipes = recipes.slice()
+        randomRecipes.sort(() => Math.random() - 0.5)
+        return randomRecipes.slice(0, 4)
+    }
 
-            <Route
-              path="/favourites"
-              element={
-                <Favourites
-                  favourites={favouriteRecipes}
-                  // favouriteRemoved={favouriteRemoved}
-                />
-              }
-            />
+    return (
+        <Suspense
+            fallback={
+                <div className="loading-pane">
+                    <h2 className="loader">🍽️</h2>
+                </div>
+            }
+        >
+            <Router>
+                <Header handleSearch={handleSearch} />
+                <div className="page-content">
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <Home randomRecipes={getRandomRecipes()} />
+                            }
+                        />
+                        <Route path="/cuisine/:cuisine" element={<Cuisine />} />
+                        <Route
+                            path="/allrecipes"
+                            element={
+                                <RecipesGrid
+                                    recipes={
+                                        filteredResults.length
+                                            ? filteredResults
+                                            : recipes
+                                    }
+                                    handleSearch={handleSearch}
+                                    updateRecipe={updateRecipe}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/:id"
+                            element={
+                                <RecipesCard
+                                    addToFavourite={favouriteSelected}
+                                    removeFromFavourite={favouriteRemoved}
+                                    addToShoppingBag={bagSelected}
+                                    removeFromShoppingBag={bagRemoved}
+                                />
+                            }
+                        />
 
-            <Route
-              path="/shoppinglist"
-              element={<ShoppingBag shoppingBag={shoppingBag} />}
-            />
+                        <Route
+                            path="/favourites"
+                            element={
+                                <Favourites
+                                    favourites={favouriteRecipes}
+                                    // favouriteRemoved={favouriteRemoved}
+                                />
+                            }
+                        />
 
-            <Route
-              path="/createrecipe"
-              element={
-                <RecipeCreate addRecipe={(recipes) => addRecipe(recipes)} />
-              }
-            />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-          {showGetRecipesBtn && (
-            <button
-              className="refresh load"
-              onClick={() => window.location.reload()}
-            >
-              🍽️
-              <br></br>
-              Load Recipes
-            </button>
-          )}
-          <ToastContainer />
-        </div>
-      </Router>
-    </Suspense>
-  );
+                        <Route
+                            path="/shoppinglist"
+                            element={<ShoppingBag shoppingBag={shoppingBag} />}
+                        />
+
+                        <Route
+                            path="/createrecipe"
+                            element={
+                                <RecipeCreate
+                                    addRecipe={(recipes) => addRecipe(recipes)}
+                                />
+                            }
+                        />
+                        <Route path="*" element={<ErrorPage />} />
+                    </Routes>
+                    {showGetRecipesBtn && (
+                        <button
+                            className="refresh load"
+                            onClick={() => window.location.reload()}
+                        >
+                            🍽️
+                            <br></br>
+                            Load Recipes
+                        </button>
+                    )}
+                    <ToastContainer />
+                </div>
+            </Router>
+        </Suspense>
+    )
 }
 
-export default App;
+export default App
